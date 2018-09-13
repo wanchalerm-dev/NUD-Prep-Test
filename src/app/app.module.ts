@@ -69,6 +69,11 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { angularFire } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent, MainPageComponent,
@@ -79,6 +84,9 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [
   ],
   imports: [
+    AngularFireModule.initializeApp(angularFire),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
     CommonModule,
     QuillModule,
     BrowserModule,
