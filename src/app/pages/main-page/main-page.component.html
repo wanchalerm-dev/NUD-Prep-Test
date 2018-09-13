@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <a fxHide="true" fxHide.gt-sm="false" href="/" class="logo">
+    <img src="/assets/logo/satit_name.png">
+  </a>
+  <button mat-button>
+    <mat-icon>dashboard</mat-icon>
+    หน้าหลัก
+  </button>
+  <span fxFlex></span>
+  <span>โลโก้โรงเรียน</span>
+  <button mat-button (click)="login()" style="font-size: 20px;">
+    <mat-icon>lock</mat-icon>
+    ลงชื่อเข้าใช้
+  </button>
+</mat-toolbar>
+<div class="wrapper" [class.wrapper-box]="boxedLayout">
+  <!--  Route ไปหน้าต่างๆของเว็บไซต์ -->
+  <router-outlet></router-outlet>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between stretch" style="background-color: #5a5a5a; padding-top: 2rem; padding-bottom: 1.8rem; color: white;">
+  <div fxFlex="25" class="text-center">
+    <img src="http://www.satit.nu.ac.th/2016/img/logo.png" width="100px" style="padding-left: 2rem;" />
+  </div>
+  <div fxFlex="25" style="color: white;">
+    <h5>เว็บไซต์ที่เกี่ยวข้อง</h5>
+    <a href="http://www.nu.ac.th" style="color: white;">มหาวิทยาลัยนเรศวร</a>
+    <br />
+    <a href="http://www.nu.ac.th" style="color: white;">คณะศึกษาศาสตร์</a>
+    <br />
+    <a href="http://www.nu.ac.th" style="color: white;">โรงเรียนมัธยมสาธิตมหาวิทยาลัยนเรศวร</a>
+  </div>
+  <div fxFlex="25">
+    <h5>ติดต่อเรา</h5>
+    โรงเรียนมัธยมสาธิตมหาวิทยาลัยนเรศวร
+    <br /> เลขที่ 1 ถนนสนามบิน ตำบลในเมือง
+    <br /> อำเภอเมือง จังหวัดพิษณุโลก 65000
+    <br /> โทรศัพท์: 055-378-306 ถึง 310
+    <br /> โทรสาร: 055-378-305
+
+  </div>
+</div>
+<div class="text-center" style="background-color: #2e2e2e; padding-top: 1rem; padding-bottom: 1rem; color: white;">
+  พัฒนาโดย งานระบบเทคโนโลยีสารสนเทศ ฝ่ายนโยบายและแผน โรงเรียนมัธยมสาธิตมหาวิทยาลัยนเรศวร @2018
+</div>

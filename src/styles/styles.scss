@@ -1,0 +1,102 @@
+@import '~normalize.css/normalize.css';
+@import "~dragula/dist/dragula.css";
+@import "~quill/dist/quill.snow.css";
+@import 'typography';
+@import 'theme/theme';
+@import 'hovers/hovers';
+@import 'cards';
+
+/************************************** COMMON STYLES **************************************/
+html, body, mat-sidenav-container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Prompt', sans-serif;
+}
+
+//make pages display block for route animation
+router-outlet ~ * {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/************************************** SIDE PANEL STYLES **************************************/
+.mat-sidenav {
+  width: 300px;
+  @include mat-elevation(16);
+}
+.perfect-scrollbar {
+  height: 100%;
+}
+/************************************** TOOLBAR STYLES **************************************/
+.mat-toolbar {
+  @include mat-elevation(4);
+}
+
+.td-data-table-cell{
+  font-size: 18px;
+}
+
+.td-data-table-column{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mat-tab-label, .mat-tab-link {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mat-card-subtitle, .mat-card-content, .mat-card-header .mat-card-title{
+  font-size: 18px;
+}
+
+.mat-line{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mat-list .mat-list-item .mat-line:nth-child(n+2), .mat-nav-list .mat-list-item .mat-line:nth-child(n+2), .mat-selection-list .mat-list-item .mat-line:nth-child(n+2){
+  font-size: 18px;
+  padding: 2px;
+  color: #3e3e3e;
+}
+.mat-list .mat-list-item .mat-list-text{
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+}
+[matCardOwner]{
+  width:140px;
+  // height:170px;
+  border-radius:8%;
+  margin-top: 30px;
+  // border:5px solid #6DD5FA;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // background-position: center center;
+  // background-size: cover;
+}
+.mat-card[_ngcontent-c19] {
+  margin-bottom: 1.8rem;
+}
+
+.td-data-table-row:hover{
+  cursor: pointer;
+}
+[matIconFile]{
+  box-shadow: 0 15px 6px -6px black;
+}
+div.scroll-list {
+  width: auto;
+  height: 440px;
+  overflow: auto;
+}
+div.polaroid {
+  width: 140px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  border-radius: 20px;
+}
