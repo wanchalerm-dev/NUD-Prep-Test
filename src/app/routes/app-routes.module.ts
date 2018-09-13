@@ -19,8 +19,8 @@ const PrepTest_ROUTES: Routes = [
       ]
   },
   { path: 'login', component: LoginPageComponent },
-  // { path: '', redirectTo: 'Home', pathMatch: 'full' },
-  // { path: '**', redirectTo: 'Home', pathMatch: 'prefix' }
+  { path: '', redirectTo: 'Home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'Home', pathMatch: 'prefix' }
 ];
 
 @NgModule({
