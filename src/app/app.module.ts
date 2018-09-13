@@ -73,12 +73,22 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { angularFire } from '../environments/environment';
+import { StudentHomeComponent } from './pages/student/student-home/student-home.component';
+import { StudentCreateComponent } from './pages/student/student-create/student-create.component';
+import { StudentInfoComponent } from './pages/student/student-info/student-info.component';
+import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
+import { StudentRemoveComponent } from './pages/student/student-remove/student-remove.component';
 
 @NgModule({
   declarations: [
     AppComponent, MainPageComponent,
     LoginPageComponent,
     DashboardPageComponent,
+    StudentHomeComponent,
+    StudentCreateComponent,
+    StudentInfoComponent,
+    StudentEditComponent,
+    StudentRemoveComponent,
   
   ],
   entryComponents: [
