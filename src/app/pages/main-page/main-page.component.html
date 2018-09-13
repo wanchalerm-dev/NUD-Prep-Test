@@ -2,7 +2,7 @@
   <a fxHide="true" fxHide.gt-sm="false" href="/" class="logo">
     <img src="/assets/logo/satit_name.png">
   </a>
-<hr>
+
   <button mat-button [matMenuTriggerFor]="menu1">
     <mat-icon>account_balance</mat-icon>
     สถานที่สอบ
@@ -10,18 +10,18 @@
   <mat-menu #menu1="matMenu">
     <button mat-menu-item> <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
     <button mat-menu-item> <mat-icon>contacts</mat-icon>ห้องสอบ</button>
-    <button mat-menu-item> <mat-icon>people</mat-icon>ผู้คุมสอบ</button>
-    <button mat-menu-item> <mat-icon>blur_linear</mat-icon>ผังการนั่งสอบ</button>
+    <button mat-menu-item> <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
+    <button mat-menu-item> <mat-icon>blur_linear</mat-icon>แผนผังที่นั่งสอบ</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu2">
     <mat-icon>face</mat-icon>
-    ผู้สอบ
+    นักเรียน
   </button>
   <mat-menu #menu2="matMenu">
-    <button mat-menu-item> <mat-icon>account_balance</mat-icon>รายการผู้สมัคร</button>
-    <button mat-menu-item> <mat-icon>account_balance</mat-icon>บันทึกข้อมูลผู้สมัคร</button>
-    <button mat-menu-item> <mat-icon>account_balance</mat-icon>พิมพ์บัตรประจำตัวผู้สมัคร</button>
+    <button mat-menu-item> <mat-icon>list</mat-icon>รายชื่อนักเรียน</button>
+    <button mat-menu-item> <mat-icon>assignment_ind</mat-icon>บันทึกข้อมูลผู้สมัคร</button>
+    <button mat-menu-item> <mat-icon>local_laundry_service</mat-icon>พิมพ์บัตรประจำตัวผู้สมัคร</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu3">
@@ -30,8 +30,8 @@
   </button>
   <mat-menu #menu3="matMenu">
     <button mat-menu-item> <mat-icon>recent_actors</mat-icon>รายชื่อผู้สมัคร</button>
-    <button mat-menu-item> <mat-icon>people</mat-icon>ผู้คุมสอบ</button>
-    <button mat-menu-item> <mat-icon>receipt</mat-icon>รายงานเกี่ยวกับสถานที่จัดสอบ</button>
+    <button mat-menu-item> <mat-icon>people</mat-icon>รายชื่อกรรมการ</button>
+    <button mat-menu-item> <mat-icon>receipt</mat-icon>ข้อมูลสถานที่ศูนย์สอบ</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu4">
@@ -42,7 +42,7 @@
     <button mat-menu-item> <mat-icon>event_note</mat-icon>ข้อมูลโรงเรียน</button>
     <button mat-menu-item> <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
   </mat-menu>
-  <hr>
+  
   <button mat-button>
     <mat-icon>collections_bookmark</mat-icon>
     คู่มือการใช้งาน
