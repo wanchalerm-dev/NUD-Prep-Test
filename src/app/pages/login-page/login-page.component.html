@@ -15,6 +15,7 @@
         </div>
         <button mat-raised-button color="primary" class="push-top-sm" (click)="login(username.value, password.value)">LOGIN</button>
         <p>กรุณาลงชื่อเช้าใช้เพื่อเข้าสู่ระบบ<br />เฉพาะศูนย์สอบที่เข้าร่วมโครงการเท่านั้น</p>
+        <p *ngIf="isShowErrorMessage" style="color: brown;">{{ errorMessage }}</p>
       </mat-card-content>
     </mat-card>
   </article>

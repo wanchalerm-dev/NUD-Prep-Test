@@ -37,7 +37,7 @@ export class UserService {
       return this.fireAuth.auth.signInWithEmailAndPassword(email, password).then( sign => {
         resolve(sign);
       }).catch(error => {
-        console.log(error);
+        resolve(error);
       });
     });
   }

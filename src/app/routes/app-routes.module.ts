@@ -12,8 +12,6 @@ import { StudentEditComponent } from '../pages/student/student-edit/student-edit
 import { StudentRemoveComponent } from '../pages/student/student-remove/student-remove.component';
 
 
-
-
 const PrepTest_ROUTES: Routes = [
   {
     path: 'Home',
@@ -45,7 +43,6 @@ const PrepTest_ROUTES: Routes = [
           path: 'info/:id',
           component: StudentInfoComponent
         }
-
       ]
   },
   { path: 'login', component: LoginPageComponent },
