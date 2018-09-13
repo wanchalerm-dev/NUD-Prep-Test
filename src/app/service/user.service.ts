@@ -13,7 +13,7 @@ export class UserService {
 
   userSignOut(){
     return new Promise((reslove, reject) => {
-      this.fireAuth.auth.signout();
+      this.fireAuth.auth.signOut();
       reslove({operation: 'loged out'});
     });
   }

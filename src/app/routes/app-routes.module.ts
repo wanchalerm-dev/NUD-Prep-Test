@@ -5,6 +5,12 @@ import { NgModule } from '@angular/core';
 import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { DashboardPageComponent } from '../pages/dashboard-page/dashboard-page.component';
 
+import { StudentHomeComponent } from '../pages/student/student-home/student-home.component';
+import { StudentInfoComponent } from '../pages/student/student-info/student-info.component';
+import { StudentCreateComponent } from '../pages/student/student-create/student-create.component';
+import { StudentEditComponent } from '../pages/student/student-edit/student-edit.component';
+import { StudentRemoveComponent } from '../pages/student/student-remove/student-remove.component';
+
 
 
 
@@ -21,9 +27,30 @@ const PrepTest_ROUTES: Routes = [
         }
       ]
   },
+  {
+    path: 'Students',
+    component: MainPageComponent,
+    canActivateChild: [],
+    children:
+      [
+        {
+          path: '',
+          component: StudentHomeComponent
+        },
+        {
+          path: 'Home',
+          component: StudentHomeComponent
+        },
+        {
+          path: 'info/:id',
+          component: StudentInfoComponent
+        }
+
+      ]
+  },
   { path: 'login', component: LoginPageComponent },
-  { path: '', redirectTo: 'Home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'Home', pathMatch: 'prefix' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login', pathMatch: 'prefix' }
 ];
 
 @NgModule({

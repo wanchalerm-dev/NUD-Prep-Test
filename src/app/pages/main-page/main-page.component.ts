@@ -104,4 +104,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.router.navigate(['./login']);
   }
 
+  gotoLoginPage(){
+    this.router.navigateByUrl('/login');
+  }
+
 }
