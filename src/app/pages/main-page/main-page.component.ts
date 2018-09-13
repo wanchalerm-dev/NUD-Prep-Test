@@ -3,6 +3,7 @@ import { ResizeService } from '../../resize/resize.service';
 import { routerAnimation } from '../../utils/page.animation';
 import { Router, RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
