@@ -10,9 +10,31 @@ import { StudentInfoComponent } from '../pages/student/student-info/student-info
 import { StudentCreateComponent } from '../pages/student/student-create/student-create.component';
 import { StudentEditComponent } from '../pages/student/student-edit/student-edit.component';
 import { StudentRemoveComponent } from '../pages/student/student-remove/student-remove.component';
+import { SchoolHomeComponent } from '../pages/school/school-home/school-home.component';
+import { SchoolEditComponent } from '../pages/school/school-edit/school-edit.component';
 
 
 const PrepTest_ROUTES: Routes = [
+  {
+    path: 'School',
+    component: MainPageComponent,
+    canActivateChild: [],
+    children:
+      [
+        {
+          path: '',
+          component: SchoolHomeComponent
+        },
+        {
+          path: 'Home',
+          component: SchoolHomeComponent
+        },
+        {
+          path: 'Edit/:id',
+          component: SchoolEditComponent
+        }
+      ]
+  },
   {
     path: 'Home',
     component: MainPageComponent,

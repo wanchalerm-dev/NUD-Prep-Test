@@ -78,6 +78,8 @@ import { StudentCreateComponent } from './pages/student/student-create/student-c
 import { StudentInfoComponent } from './pages/student/student-info/student-info.component';
 import { StudentEditComponent } from './pages/student/student-edit/student-edit.component';
 import { StudentRemoveComponent } from './pages/student/student-remove/student-remove.component';
+import { SchoolHomeComponent } from './pages/school/school-home/school-home.component';
+import { SchoolEditComponent } from './pages/school/school-edit/school-edit.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { StudentRemoveComponent } from './pages/student/student-remove/student-r
     StudentInfoComponent,
     StudentEditComponent,
     StudentRemoveComponent,
+    SchoolHomeComponent,
+    SchoolEditComponent,
   
   ],
   entryComponents: [
