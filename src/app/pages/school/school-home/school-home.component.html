@@ -1,3 +1,57 @@
-<p>
-  school-home works!
-</p>
+<section>
+  <div fxLayout="row" fxLayoutAlign="space-around start">
+    <!-- คอลัม 1 -->
+    <div fxFlex="1 0 auto" fxFlex.gt-md="20">
+    </div>
+    <!-- คอลัม 2 -->
+    <div fxFlex="1 0 auto" fxFlex.gt-md="60">
+      <!-- การ์ด 1 -->
+      <mat-card class="card-type-eighth" style="width:100%">
+        <mat-card-title-group>
+          <mat-card-title>
+            <mat-icon style="position: relative; top: 6px;">event_note</mat-icon> ข้อมูลศูนย์สอบ
+          </mat-card-title>
+        </mat-card-title-group>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <table style="width:100%">
+            <tr>
+              <td style="width:20%">
+                ศูนย์สอบ :
+              </td>
+              <td style="width:80%">{{name}}</td>
+            </tr>
+            <tr>
+              <td>
+                ประเภท :
+              </td>
+              <td><div *ngIf="!this.type">สนามปิด</div><div *ngIf="this.type">สนามเปิด</div></td>
+            </tr>
+            <tr>
+              <td>
+                ที่อยู่ :
+              </td>
+              <td>{{address}}</td>
+            </tr>
+            <tr>
+              <td>
+                หมายเลขโทรศัพท์ :
+              </td>
+              <td>{{ads_phone}}</td>
+            </tr>
+            <tr>
+              <td>
+                หมายเลขโทรสาร :
+              </td>
+              <td>{{ads_fax}}</td>
+            </tr>
+          </table><br>
+          <button mat-raised-button color="primary" class="push-top-sm" ><mat-icon>edit</mat-icon>แก้ไขข้อมูล</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!-- คอลัม 3 -->
+    <div fxFlex="1 0 auto" fxFlex.gt-md="20">
+    </div>
+  </div>
+</section>
