@@ -34,11 +34,22 @@ export class LoginPageComponent implements OnInit {
    * @param password
    */
   login(login, password) {
-    this.user.userLogin(login + '@nu.ac.th', password).then(user => {
-      if(user['user']['uid'] != undefined){
+    this.user.userLogin(login, password).then(user => {
+      if(user['user'].length > 0){
+        console.log(user['user']);
+        window.localStorage.setItem('id', user['user']['id']);
+        window.localStorage.setItem('username', user['user']['username']);
+        window.localStorage.setItem('role', user['user']['role']);
+        window.localStorage.setItem('prename', user['user']['prename']);
+        window.localStorage.setItem('firstname', user['user']['firstname']);
+        window.localStorage.setItem('lastname', user['user']['lastname']);
+        window.localStorage.setItem('email', user['user']['email']);
+        window.localStorage.setItem('phone', user['user']['phone']);
+        window.localStorage.setItem('school_id', user['user']['school_id']);
+        window.localStorage.setItem('school_name', user['user']['']);
         this.router.navigateByUrl('/Home');
       }else{
-        this.errorMessage = user['message'];
+        this.errorMessage = 'มีบางอย่างผิดพลาด Username หรือ Password ไม่ถูกต้อง กรุณาลองอีกครั้ง';
         this.isShowErrorMessage = true;
       }
     });
