@@ -19,13 +19,9 @@ export class LoginPageComponent implements OnInit {
   constructor(private router: Router, private user: UserService) { }
 
   ngOnInit() {
-    if(window.localStorage.getItem('token') != undefined){
-      this.router.navigate(["/authorities/dashboard"]);
-    }else{
       this.user.userSignOut();
       window.localStorage.clear();
       window.sessionStorage.clear();
-    }
   }
 
   /**
@@ -37,15 +33,15 @@ export class LoginPageComponent implements OnInit {
     this.user.userLogin(login, password).then(user => {
       if(user['user'].length > 0){
         console.log(user['user']);
-        window.localStorage.setItem('id', user['user']['id']);
-        window.localStorage.setItem('username', user['user']['username']);
-        window.localStorage.setItem('role', user['user']['role']);
-        window.localStorage.setItem('prename', user['user']['prename']);
-        window.localStorage.setItem('firstname', user['user']['firstname']);
-        window.localStorage.setItem('lastname', user['user']['lastname']);
-        window.localStorage.setItem('email', user['user']['email']);
-        window.localStorage.setItem('phone', user['user']['phone']);
-        window.localStorage.setItem('school_id', user['user']['school_id']);
+        window.localStorage.setItem('id', user['user'][0]['id']);
+        window.localStorage.setItem('username', user['user'][0]['username']);
+        window.localStorage.setItem('role', user['user'][0]['role']);
+        window.localStorage.setItem('prename', user['user'][0]['prename']);
+        window.localStorage.setItem('firstname', user['user'][0]['firstname']);
+        window.localStorage.setItem('lastname', user['user'][0]['lastname']);
+        window.localStorage.setItem('email', user['user'][0]['email']);
+        window.localStorage.setItem('phone', user['user'][0]['phone']);
+        window.localStorage.setItem('school_id', user['user'][0]['school_id']);
         this.router.navigateByUrl('/Home');
       }else{
         this.errorMessage = 'มีบางอย่างผิดพลาด Username หรือ Password ไม่ถูกต้อง กรุณาลองอีกครั้ง';
