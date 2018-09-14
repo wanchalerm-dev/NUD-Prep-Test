@@ -46,7 +46,6 @@ export class LoginPageComponent implements OnInit {
         window.localStorage.setItem('email', user['user']['email']);
         window.localStorage.setItem('phone', user['user']['phone']);
         window.localStorage.setItem('school_id', user['user']['school_id']);
-        window.localStorage.setItem('school_name', user['user']['']);
         this.router.navigateByUrl('/Home');
       }else{
         this.errorMessage = 'มีบางอย่างผิดพลาด Username หรือ Password ไม่ถูกต้อง กรุณาลองอีกครั้ง';
