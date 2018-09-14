@@ -20,6 +20,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   sideNavOpened = false;
   fullname: any;
   myPosition: any;
+  school_name: any;
 
   // Data for messages at popup
 
@@ -52,6 +53,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.school_name = window.localStorage.getItem('school_name');
   }
 
   gotoDashboard() {
@@ -104,7 +106,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     this.router.navigate(['./login']);
   }
 
-  gotoLoginPage(){
+  gotoLoginPage() {
     this.router.navigateByUrl('/login');
   }
 

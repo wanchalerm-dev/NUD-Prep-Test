@@ -3,11 +3,11 @@
     <img src="/assets/logo/satit_name.png">
   </a>
 
-  <button mat-button [matMenuTriggerFor]="menu1" >
+  <button mat-button [matMenuTriggerFor]="menu1">
     <mat-icon>account_balance</mat-icon>
     สถานที่สอบ
   </button>
-  <mat-menu #menu1="matMenu" >
+  <mat-menu #menu1="matMenu">
     <button mat-menu-item disabled> <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
     <button mat-menu-item disabled> <mat-icon>contacts</mat-icon>ห้องสอบ</button>
     <button mat-menu-item disabled> <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
@@ -42,18 +42,22 @@
     <button mat-menu-item> <mat-icon>event_note</mat-icon>ข้อมูลโรงเรียน</button>
     <button mat-menu-item> <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
   </mat-menu>
-  
+
   <button mat-button>
     <mat-icon>collections_bookmark</mat-icon>
     คู่มือการใช้งาน
   </button>
 
   <span fxFlex></span>
-  <span>โลโก้โรงเรียน</span>
+  <span>{{school_name}}</span>
+
+
   <button mat-button (click)="gotoLoginPage()" style="font-size: 20px;">
     <mat-icon>lock</mat-icon>
-    ลงชื่อเข้าใช้
+    ออกจากระบบ
   </button>
+
+
 </mat-toolbar>
 <div class="wrapper" [class.wrapper-box]="boxedLayout">
   <!--  Route ไปหน้าต่างๆของเว็บไซต์ -->
