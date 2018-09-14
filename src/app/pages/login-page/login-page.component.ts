@@ -44,7 +44,7 @@ export class LoginPageComponent implements OnInit {
         window.localStorage.setItem('phone', user['user'][0]['phone']);
         window.localStorage.setItem('school_id', user['user'][0]['school_id']);
         this.school.schoolInfo(user['user'][0]['school_id']).then(resSchool => {
-          window.localStorage.setItem('school_name', user['school'][0]['name']);
+          window.localStorage.setItem('school_name', resSchool['school'][0]['name']);
           this.router.navigateByUrl('/Home');
         });
         
