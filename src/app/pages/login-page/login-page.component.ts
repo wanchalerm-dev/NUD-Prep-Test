@@ -4,6 +4,7 @@ import { routerAnimation } from '../../utils/page.animation';
 import { LogedinGuard } from '../../guard/logedin.guard';
 import { NgModule } from '@angular/core';
 import { UserService } from '../../service/user.service';
+import { SchoolService } from '../../service/school.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -16,7 +17,7 @@ export class LoginPageComponent implements OnInit {
 
   isShowErrorMessage = false;
   errorMessage = ""
-  constructor(private router: Router, private user: UserService) { }
+  constructor(private router: Router, private user: UserService, private school: SchoolService) { }
 
   ngOnInit() {
       this.user.userSignOut();
@@ -42,7 +43,11 @@ export class LoginPageComponent implements OnInit {
         window.localStorage.setItem('email', user['user'][0]['email']);
         window.localStorage.setItem('phone', user['user'][0]['phone']);
         window.localStorage.setItem('school_id', user['user'][0]['school_id']);
-        this.router.navigateByUrl('/Home');
+        this.school.schoolInfo(user['user'][0]['school_id']).then(resSchool => {
+          window.localStorage.setItem('school_name', user['school'][0]['name']);
+          this.router.navigateByUrl('/Home');
+        });
+        
       }else{
         this.errorMessage = 'มีบางอย่างผิดพลาด Username หรือ Password ไม่ถูกต้อง กรุณาลองอีกครั้ง';
         this.isShowErrorMessage = true;

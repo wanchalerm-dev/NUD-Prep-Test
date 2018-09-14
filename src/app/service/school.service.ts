@@ -7,12 +7,19 @@ import { Http, Response, Headers } from '@angular/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class SchoolService {
 
   private _host;
 
-  constructor(private fireAuth: AngularFireAuth, private _http: Http) {
+  constructor(private _http: Http) {
     this._host = 'http://www.satit.nu.ac.th/node/nudPrepTest';
+  }
+
+  schoolInfo(schoolId){
+    const param = {
+      school_id: schoolId
+    };
+    return this._post(param, 'getSchoolInfo');
   }
 
   private packParameter(param) {
@@ -43,47 +50,5 @@ export class UserService {
     });
   }
 
-  userSignOut() {
-    return new Promise((reslove, reject) => {
-      this.fireAuth.auth.signOut();
-      reslove({ operation: 'loged out' });
-    });
-  }
 
-  isLogin() {
-    return this.fireAuth.authState.pipe(first()).toPromise();
-    // isLoggedIn().pipe(
-    //   tap(user => {
-    //     if (user) {
-    //       // do something
-    //     } else {
-    //       // do something else
-    //     }
-    //   })
-    // )
-    // .subscribe()
-  }
-
-  userLogin(email, password) {
-    // return new Promise((resolve, reject) => {
-    //   return this.fireAuth.auth.signInWithEmailAndPassword(email, password).then( sign => {
-    //     resolve(sign);
-    //   }).catch(error => {
-    //     resolve(error);
-    //   });
-    // });
-    const param = {
-      username: email,
-      password: password
-    };
-    return this._post(param, 'login');
-  }
-
-  userRegiste(email, password) {
-    return new Promise((reslove, reject) => {
-      return this.fireAuth.auth.createUserWithEmailAndPassword(email, password).then(auth => {
-        reslove(auth);
-      });
-    });
-  }
 }
