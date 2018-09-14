@@ -99,7 +99,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   logout() {
     window.localStorage.clear();
     window.sessionStorage.clear();
-    this.router.navigate(['./login']);
+    this.gotoLoginPage();
   }
 
   login() {
