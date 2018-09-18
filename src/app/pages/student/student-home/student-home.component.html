@@ -3,6 +3,7 @@
     <div fxFlex="80">
       <h4>รายชื่อนักเรียน</h4>
     </div>
+    
   </div>
   <article>
     <div fxLayout="row" fxLayoutAlign="space-around start">
@@ -13,18 +14,21 @@
               <span fxFlex>ตารางรายชื่อนักเรียน</span>
               <span fxFlex></span>
               <span style="text-align: right;">
-                <button routerLink="/Students/createStudent" style="font-size: 20px;" (click)="updateSchoolInfo()" fxLayout mat-raised-button color="primary">
+                <button routerLink="/Students/createStudent" style="font-size: 20px;" (click)="updateSchoolInfo()" fxLayout mat-raised-button
+                  color="primary">
                   <mat-icon>add</mat-icon> เพิ่มนักเรียน
                 </button>
               </span>
             </div>
-            <br />
-            <mat-divider></mat-divider>
           </mat-card-title>
+          <mat-card-subtitle>
+              *หมายเหตุ กำลังพัฒนาส่วนการแก้ไข และลบข้อมูลนักเรียน
+          </mat-card-subtitle>
+          <mat-divider></mat-divider>
           <mat-card-content>
             <table style="width: 100%;">
               <thead>
-                <tr>
+                <tr style="background-color: #bdbdbd;">
                   <td class="head-table">ลำดับ</td>
                   <td class="head-table">เลขประจำตัวประชาชน</td>
                   <td class="head-table" colspan="2">ชื่อ - นามสกุล</td>
@@ -38,16 +42,25 @@
                 </tr>
               </thead>
               <tr *ngFor="let student of studentList; let i = index;">
-                <td>{{ (i + 1) }}</td>
-                <td>{{ student.prename }}{{ student.firstname }}</td>
-                <td>{{ student.lastname }}</td>
-                <td>{{ student.level }}</td>
-                <td>{{ student.room }}</td>
-                <td>{{ student.number }}</td>
-                <td>{{ student.school_name }}</td>
-                <td>{{ student.phone }}</td>
-                <td>แก้ไข</td>
-                <td>ลบ</td>
+                <td class="text-center">{{ (i + 1) }}</td>
+                <td class="text-center">{{ student.personal_id }}</td>
+                <td style="border-right: none; padding-left: 6px;">{{ student.prename }}{{ student.firstname }}</td>
+                <td style="border-left: none;">{{ student.lastname }}</td>
+                <td class="text-center">{{ student.level }}</td>
+                <td class="text-center">{{ student.room }}</td>
+                <td class="text-center">{{ student.number }}</td>
+                <td style="padding-left: 6px;">{{ student.school_name }}</td>
+                <td style="padding-left: 6px;">{{ student.phone }}</td>
+                <td class="text-center">
+                  <button mat-icon-button disabled>
+                    <mat-icon >edit</mat-icon>
+                  </button>
+                </td>
+                <td class="text-center" >
+                  <button mat-icon-button color="warn" disabled>
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
               </tr>
             </table>
           </mat-card-content>

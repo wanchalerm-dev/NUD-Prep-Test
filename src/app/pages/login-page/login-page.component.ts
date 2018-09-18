@@ -33,7 +33,6 @@ export class LoginPageComponent implements OnInit {
   login(login, password) {
     this.user.userLogin(login, password).then(user => {
       if(user['user'].length > 0){
-        console.log(user['user']);
         window.localStorage.setItem('id', user['user'][0]['id']);
         window.localStorage.setItem('username', user['user'][0]['username']);
         window.localStorage.setItem('role', user['user'][0]['role']);

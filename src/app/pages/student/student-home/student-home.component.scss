@@ -2,3 +2,18 @@
     font-weight: bold;
     text-align: center;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+thead tr td {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
