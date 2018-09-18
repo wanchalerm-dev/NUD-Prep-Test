@@ -1,17 +1,23 @@
 <mat-toolbar color="primary">
-  <a fxHide="true" fxHide.gt-sm="false" href="/" class="logo">
+  <a fxHide="true" fxHide.gt-sm="false" href="/Home" class="logo">
     <img src="/assets/logo/satit_name.png">
   </a>
 
   <button mat-button [matMenuTriggerFor]="menu1">
     <mat-icon>account_balance</mat-icon>
-    สถานที่สอบ
+    ศูนย์สอบและสถานที่สอบ
   </button>
   <mat-menu #menu1="matMenu">
-    <button mat-menu-item disabled> <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
-    <button mat-menu-item disabled> <mat-icon>contacts</mat-icon>ห้องสอบ</button>
-    <button mat-menu-item disabled> <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
-    <button mat-menu-item disabled> <mat-icon>blur_linear</mat-icon>แผนผังที่นั่งสอบ</button>
+    <button routerLink="/School" mat-menu-item>
+      <mat-icon>event_note</mat-icon>การแก้ไขข้อมูลศูนย์สอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>contacts</mat-icon>ห้องสอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>blur_linear</mat-icon>แผนผังที่นั่งสอบ</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu2">
@@ -19,9 +25,12 @@
     นักเรียน
   </button>
   <mat-menu #menu2="matMenu">
-    <button mat-menu-item> <mat-icon>list</mat-icon>รายชื่อนักเรียน</button>
-    <button mat-menu-item> <mat-icon>assignment_ind</mat-icon>บันทึกข้อมูลผู้สมัคร</button>
-    <button mat-menu-item> <mat-icon>local_laundry_service</mat-icon>พิมพ์บัตรประจำตัวผู้สมัคร</button>
+    <button routerLink="/Students" mat-menu-item>
+      <mat-icon>list</mat-icon>รายชื่อนักเรียน</button>
+    <button routerLink="/Students/createStudent" mat-menu-item>
+      <mat-icon>assignment_ind</mat-icon>บันทึกข้อมูลผู้สมัคร</button>
+    <button routerLink="" disabled mat-menu-item>
+      <mat-icon>local_laundry_service</mat-icon>พิมพ์บัตรประจำตัวผู้สมัคร</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="menu3">
@@ -29,24 +38,33 @@
     เอกสาร
   </button>
   <mat-menu #menu3="matMenu">
-    <button mat-menu-item disabled> <mat-icon>recent_actors</mat-icon>รายชื่อผู้สมัคร</button>
-    <button mat-menu-item disabled> <mat-icon>people</mat-icon>รายชื่อกรรมการ</button>
-    <button mat-menu-item disabled> <mat-icon>receipt</mat-icon>ข้อมูลสถานที่ศูนย์สอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>recent_actors</mat-icon>รายชื่อผู้สมัคร</button>
+    <button mat-menu-item disabled>
+      <mat-icon>people</mat-icon>รายชื่อกรรมการ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>receipt</mat-icon>ข้อมูลสถานที่ศูนย์สอบ</button>
+    <button mat-menu-item disabled>
+      <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="menu4">
+  <!-- <button mat-button [matMenuTriggerFor]="menu4">
     <mat-icon>settings</mat-icon>
     การตั้งค่า
   </button>
   <mat-menu #menu4="matMenu">
     <button routerLink="/School" mat-menu-item> <mat-icon>event_note</mat-icon>ข้อมูลโรงเรียน</button>
-    <button mat-menu-item> <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
-  </mat-menu>
+    <button mat-menu-item disabled> <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
+  </mat-menu> -->
 
-  <button mat-button>
+  <button mat-button [matMenuTriggerFor]="menu5">
     <mat-icon>collections_bookmark</mat-icon>
     คู่มือการใช้งาน
   </button>
+  <mat-menu #menu5="matMenu">
+    <button routerLink="" mat-menu-item>
+      <mat-icon>event_note</mat-icon>การแก้ไขข้อมูลศูนย์สอบ</button>
+  </mat-menu>
 
   <span fxFlex></span>
   <span>{{school_name}}</span>

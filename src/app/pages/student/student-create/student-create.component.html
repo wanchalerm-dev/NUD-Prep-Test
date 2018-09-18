@@ -1,3 +1,75 @@
-<p>
-  student-create works!
-</p>
+<section>
+  <div fxLayout="row" fxLayoutAlign="space-around start">
+    <div fxFlex="80">
+      <h4>เพิ่มรายชื่อนักเรียน</h4>
+    </div>
+  </div>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-around start">
+      <div fxFlex="80">
+        <mat-card>
+          <mat-card-title>
+            <h5>แบบฟอร์มการเพิ่มรายชื่อนักเรียน</h5>
+          </mat-card-title>
+          <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field hintLabel="*ห้ามใช้อักษรย่อ">
+                <input matInput placeholder="คำหน้านาม" [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="student.prename">
+              </mat-form-field>
+
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates | async" [value]="state">
+                  {{ state }}
+                </mat-option>
+              </mat-autocomplete>
+              <mat-form-field fxFlex="40">
+                <input matInput type="text" placeholder="ชื่อ" [(ngModel)]="student.firstname" />
+              </mat-form-field>
+              <mat-form-field fxFlex="40">
+                <input matInput type="text" placeholder="นามสกุล" [(ngModel)]="student.lastname" />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field fxFlex="65" hintLabel="*โรงเรียนที่กำลังศึกษาอยู่">
+                <input matInput type="text" placeholder="โรงเรียน" [(ngModel)]="student.school_name" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="student.personal_id" />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="ระดับชั้น" [(ngModel)]="student.level" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="ห้อง" [(ngModel)]="student.room" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="เลขที่" [(ngModel)]="student.number" />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="หมายเลขโทรศัพท์" [(ngModel)]="student.phone" />
+              </mat-form-field>
+              <mat-form-field fxFlex="65">
+                <input matInput type="text" disabled [value]="school_name" placeholder="ศูนย์สอบ" />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="end start">
+              <button (click)="createStudent()" fxLayout mat-raised-button color="primary" style="font-size: 20px;">
+                <mat-icon>add</mat-icon> บันทึก</button>
+              <button style="margin-left: 15px; font-size: 20px;" fxLayout mat-raised-button color="warn">
+                <mat-icon>close</mat-icon> ยกเลิก</button>
+            </div>
+            
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </article>
+</section>

@@ -64,6 +64,14 @@ const PrepTest_ROUTES: Routes = [
         {
           path: 'info/:id',
           component: StudentInfoComponent
+        },
+        {
+          path: 'createStudent',
+          component: StudentCreateComponent
+        },
+        {
+          path: 'editStudent/:id',
+          component: StudentEditComponent
         }
       ]
   },
