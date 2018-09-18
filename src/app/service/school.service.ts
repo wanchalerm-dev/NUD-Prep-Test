@@ -22,6 +22,11 @@ export class SchoolService {
     return this._post(param, 'getSchoolInfo');
   }
 
+  updateSchoolInfo(school){
+    const param = school;
+    return this._post(param, 'updateSchoolData');
+  }
+
   private packParameter(param) {
     var _parameter = Object.keys(param).map(function (key) {
       return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);
@@ -40,7 +45,7 @@ export class SchoolService {
         } catch (error) {
 
         }
-        console.log(json);
+        // console.log(json);
         return json;
       })).subscribe((data) => {
         resolve(data);

@@ -25,7 +25,7 @@
               <td>
                 ประเภท :
               </td>
-              <td><div *ngIf="!this.type">สนามปิด</div><div *ngIf="this.type">สนามเปิด</div></td>
+              <td><div *ngIf="!this.type">สนามเฉพาะนักเรียนในสังกัด</div><div *ngIf="this.type">สนามรับนักเรียนภายในและภายนอกสังกัด</div></td>
             </tr>
             <tr>
               <td>
@@ -46,7 +46,7 @@
               <td>{{ads_fax}}</td>
             </tr>
           </table><br>
-          <button mat-raised-button color="primary" class="push-top-sm" ><mat-icon>edit</mat-icon>แก้ไขข้อมูล</button>
+          <button (click)="gotoEdit()" mat-raised-button color="primary" class="push-top-sm" ><mat-icon>edit</mat-icon>แก้ไขข้อมูล</button>
         </mat-card-content>
       </mat-card>
     </div>

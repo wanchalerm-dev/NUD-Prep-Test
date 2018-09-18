@@ -1,3 +1,80 @@
-<p>
-  school-edit works!
-</p>
+<section>
+  <div fxLayout="row" fxLayoutAlign="space-around start">
+    <div fxFlex="70">
+      <h4>การแก้ไขข้อมูลศูนย์สอบ</h4>
+    </div>
+  </div>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-around start">
+      <div fxFlex="70">
+        <mat-card>
+          <mat-card-title>
+            <h4>แบบฟอร์ม</h4>
+          </mat-card-title>
+          <mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="100">
+                <input matInput type="text" placeholder="ชื่อศูนย์สอบ" [(ngModel)]="schoolInfo.name" />
+              </mat-form-field>
+            </div>
+            <label style="font-size: 22px; padding-bottom: 8px;">ประเภทสนามสอบ</label>
+            <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" [(ngModel)]="schoolInfo.type">
+              <mat-radio-button [disabled]="true" [value]="'0'">สนามเฉพาะนักเรียนในสังกัด</mat-radio-button>
+              <mat-radio-button [disabled]="true" [value]="'1'">สนามรับนักเรียนภายในและภายนอกสังกัด</mat-radio-button>
+              <mat-radio-button [disabled]="true" [value]="'2'">ชมรมผู้ปกครองและครูโรงเรียนมัธยมสาธิตมหาวิทยาลัยนเรศวร</mat-radio-button>
+            </mat-radio-group>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="เลขที่" [(ngModel)]="schoolInfo.ads_number" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="หมู่บ้าน" [(ngModel)]="schoolInfo.ads_village" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="ซอย" [(ngModel)]="schoolInfo.ads_alley" />
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="ถนน" [(ngModel)]="schoolInfo.ads_road" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="ตำบล" [(ngModel)]="schoolInfo.ads_subdistrict" />
+              </mat-form-field>
+              <mat-form-field fxFlex="30">
+                <input matInput type="text" placeholder="อำเภอ" [(ngModel)]="schoolInfo.ads_district" />
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="48">
+                <input matInput type="text" placeholder="จังหวัด" [(ngModel)]="schoolInfo.ads_city" />
+              </mat-form-field>
+              <mat-form-field fxFlex="48">
+                <input matInput type="text" placeholder="รหัสไปรษณีย์" [(ngModel)]="schoolInfo.ads_zipcode" />
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="48">
+                <input matInput type="text" placeholder="หมายเลขโทรศัพท์" [(ngModel)]="schoolInfo.ads_phone" />
+              </mat-form-field>
+              <mat-form-field fxFlex="48">
+                <input matInput type="text" placeholder="หมายเลขโทรสาร" [(ngModel)]="schoolInfo.ads_fax" />
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around start">
+              <mat-form-field fxFlex="100">
+                <input matInput type="text" placeholder="เว็บไซต์" [(ngModel)]="schoolInfo.website" />
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end start">
+              <button (click)="updateSchoolInfo()" fxLayout mat-raised-button color="primary">
+                <mat-icon>save</mat-icon> บันทึก</button>
+              <button style="margin-left: 15px;" (click)="gotoBack()" fxLayout mat-raised-button color="warn">
+                <mat-icon>close</mat-icon> ยกเลิก</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </article>
+</section>
