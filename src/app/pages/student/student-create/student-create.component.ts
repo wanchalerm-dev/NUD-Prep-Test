@@ -21,7 +21,7 @@ export class StudentCreateComponent implements OnInit {
     lastname: '',
     school_name: '',
     school_test_id: window.localStorage.getItem('school_id'),
-    level: '',
+    level: 'ป.6',
     room: '',
     number: '',
     phone: ''

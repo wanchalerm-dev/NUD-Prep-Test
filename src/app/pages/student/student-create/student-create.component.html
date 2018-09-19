@@ -43,7 +43,12 @@
 
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field fxFlex="30">
-                <input matInput type="text" required placeholder="ระดับชั้น" [(ngModel)]="student.level" />
+                <mat-select [(ngModel)]="student.level">
+                    <mat-option value="ป.4">ระดับชั้นประถมศึกษาปีที่ 4</mat-option>
+                    <mat-option value="ป.5">ระดับชั้นประถมศึกษาปีที่ 5</mat-option>
+                    <mat-option value="ป.6">ระดับชั้นประถมศึกษาปีที่ 6</mat-option>
+                </mat-select>
+                <!-- <input matInput type="text" required placeholder="ระดับชั้น"  /> -->
               </mat-form-field>
               <mat-form-field fxFlex="30">
                 <input matInput type="text" placeholder="ห้อง" [(ngModel)]="student.room" />
