@@ -80,6 +80,7 @@ import { StudentEditComponent } from './pages/student/student-edit/student-edit.
 import { StudentRemoveComponent } from './pages/student/student-remove/student-remove.component';
 import { SchoolHomeComponent } from './pages/school/school-home/school-home.component';
 import { SchoolEditComponent } from './pages/school/school-edit/school-edit.component';
+import { DialogConfirmRemoveStudentComponent } from './pages/student/student-home/dialog-confirm-remove-student.component';
 
 @NgModule({
   declarations: [
@@ -93,9 +94,10 @@ import { SchoolEditComponent } from './pages/school/school-edit/school-edit.comp
     StudentRemoveComponent,
     SchoolHomeComponent,
     SchoolEditComponent,
-  
+    DialogConfirmRemoveStudentComponent,
   ],
   entryComponents: [
+    DialogConfirmRemoveStudentComponent
   ],
   imports: [
     AngularFireModule.initializeApp(angularFire),

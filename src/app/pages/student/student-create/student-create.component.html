@@ -1,7 +1,8 @@
 <section>
   <div fxLayout="row" fxLayoutAlign="space-around start">
     <div fxFlex="80">
-      <h4>เพิ่มรายชื่อนักเรียน</h4>
+      <h4 *ngIf="action">เพิ่มรายชื่อนักเรียน</h4>
+      <h4 *ngIf="!action">แก้ไขข้อมูลนักเรียน</h4>
     </div>
   </div>
   <article>
@@ -9,7 +10,8 @@
       <div fxFlex="80">
         <mat-card>
           <mat-card-title>
-            <h5>แบบฟอร์มการเพิ่มรายชื่อนักเรียน</h5>
+            <h5 *ngIf="action">แบบฟอร์มการเพิ่มรายชื่อนักเรียน</h5>
+            <h5 *ngIf="!action">แบบฟอร์มการแก้ไขข้อมูลนักเรียน</h5>
           </mat-card-title>
           <mat-card-content>
             <div fxLayout="row" fxLayoutAlign="space-between start">
@@ -61,12 +63,14 @@
             </div>
 
             <div fxLayout="row" fxLayoutAlign="end start">
-              <button (click)="createStudent()" fxLayout mat-raised-button color="primary" style="font-size: 20px;">
+              <button *ngIf="!action" (click)="editStudent()" fxLayout mat-raised-button color="primary" style="font-size: 20px;">
+                <mat-icon>edit</mat-icon> แก้ไข</button>
+              <button *ngIf="action" (click)="createStudent()" fxLayout mat-raised-button color="primary" style="font-size: 20px;">
                 <mat-icon>add</mat-icon> บันทึก</button>
-              <button style="margin-left: 15px; font-size: 20px;" fxLayout mat-raised-button color="warn">
+              <button (click)="gotoBack()" style="margin-left: 15px; font-size: 20px;" fxLayout mat-raised-button color="warn">
                 <mat-icon>close</mat-icon> ยกเลิก</button>
             </div>
-            
+
           </mat-card-content>
         </mat-card>
       </div>

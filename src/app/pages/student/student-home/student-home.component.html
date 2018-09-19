@@ -3,7 +3,6 @@
     <div fxFlex="80">
       <h4>รายชื่อนักเรียน</h4>
     </div>
-    
   </div>
   <article>
     <div fxLayout="row" fxLayoutAlign="space-around start">
@@ -26,6 +25,9 @@
           </mat-card-subtitle>
           <mat-divider></mat-divider>
           <mat-card-content>
+            <div style="text-align: right; font-size: 20px; margin-bottom: 6px;">
+              [ จำนวนผู้สมัครทั้งหมด {{ totalStudent }} คน ]
+            </div>
             <table style="width: 100%;">
               <thead>
                 <tr style="background-color: #bdbdbd;">
@@ -52,12 +54,12 @@
                 <td style="padding-left: 6px;">{{ student.school_name }}</td>
                 <td style="padding-left: 6px;">{{ student.phone }}</td>
                 <td class="text-center">
-                  <button mat-icon-button disabled>
+                  <button (click)="editStudent(student.id)" mat-icon-button >
                     <mat-icon >edit</mat-icon>
                   </button>
                 </td>
                 <td class="text-center" >
-                  <button mat-icon-button color="warn" disabled>
+                  <button (click)="deleteStudent(student)" mat-icon-button color="warn" >
                     <mat-icon>delete</mat-icon>
                   </button>
                 </td>

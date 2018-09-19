@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { StudentService } from '../../../service/student.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-student-create',
@@ -14,6 +14,7 @@ export class StudentCreateComponent implements OnInit {
   stateCtrl: FormControl;
   filteredStates: any;
   student = {
+    id: '',
     personal_id: '',
     prename: '',
     firstname: '',
@@ -28,19 +29,44 @@ export class StudentCreateComponent implements OnInit {
   school_name: any;
   school_id: any;
 
+  action: any;
+
   _sliderTickInterval = 1;
   sliderAutoTicks = false;
   sliderShowTicks = false;
-  states = [ 'เด็กชาย', 'เด็กหญิง' ];
+  states = ['เด็กชาย', 'เด็กหญิง'];
   auto: any;
 
-  constructor(private studentService: StudentService, private _router: Router) { 
+  constructor(private studentService: StudentService, private _router: Router, private activeRoute: ActivatedRoute) {
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges.pipe(
       startWith(null),
       map(name => this.filterStates(name)));
-      this.school_name = window.localStorage.getItem('school_name');
-      this.school_id = window.localStorage.getItem('school_id');
+    this.school_name = window.localStorage.getItem('school_name');
+    this.school_id = window.localStorage.getItem('school_id');
+    this.activeRoute.params.subscribe(p => {
+      if(p.id == undefined){
+        this.action = true;
+      }else{
+        this.action = false;
+        let id = atob(p.id);
+        // console.log(id);
+        this.studentService.getAstudentInfo(id).then(stdInfo => {
+          // console.log(stdInfo);
+          this.student.id = stdInfo['student'][0]['id'];
+          this.student.personal_id = stdInfo['student'][0]['personal_id'];
+          this.student.prename = stdInfo['student'][0]['prename'];
+          this.student.firstname = stdInfo['student'][0]['firstname'];
+          this.student.lastname = stdInfo['student'][0]['lastname'];
+          this.student.school_name = stdInfo['student'][0]['school_name'];
+          this.student.school_test_id = window.localStorage.getItem('school_id');
+          this.student.level = stdInfo['student'][0]['level'];
+          this.student.room = stdInfo['student'][0]['room'];
+          this.student.number = stdInfo['student'][0]['number'];
+          this.student.phone = stdInfo['student'][0]['phone'];
+        });
+      }
+    });
   }
 
   ngOnInit() {
@@ -58,14 +84,25 @@ export class StudentCreateComponent implements OnInit {
     this._sliderTickInterval = Number(v);
   }
 
-  createStudent(){
+  createStudent() {
     this.studentService.createAStudent(this.student).then(res => {
-      console.log(res);
-      if(res['operation'] == 'success'){
-        this._router.navigateByUrl('/Students')
-      }else{
+      // console.log(res);
+      if (res['operation'] == 'success') {
+        this._router.navigateByUrl('/Students');
+      } else {
         alert('มีบางอย่างผิดพลาดโปรดติดต่อผู้ดูแลระบบ');
       }
     });
+  }
+
+  editStudent(){
+    this.studentService.editStudent(this.student).then(res => {
+      // console.log(res);
+      this._router.navigateByUrl('/Students');
+    });
+  }
+
+  gotoBack(){
+    this._router.navigateByUrl('/Students');
   }
 }

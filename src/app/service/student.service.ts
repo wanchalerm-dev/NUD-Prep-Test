@@ -21,6 +21,24 @@ export class StudentService {
     return this._post(param, 'createAStudent');
   }
 
+  removeStudent(student){
+    const param = student;
+    return this._post(param, 'deleteAStudent');
+  }
+
+  editStudent(std){
+    const param = std;
+    return this._post(param, 'updateStudentInfo');
+  }
+
+  getAstudentInfo(student_id){
+    const param = {
+      student_id: student_id
+    };
+    return this._post(param, 'getAStudentInfo');
+  }
+
+
   private _host;
 
   constructor(private _http: Http) {
