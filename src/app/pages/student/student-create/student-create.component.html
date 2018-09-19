@@ -16,7 +16,7 @@
           <mat-card-content>
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field hintLabel="*ห้ามใช้อักษรย่อ">
-                <input matInput placeholder="คำหน้านาม" [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="student.prename">
+                <input matInput placeholder="คำหน้านาม" required [matAutocomplete]="auto" [formControl]="stateCtrl" [(ngModel)]="student.prename">
               </mat-form-field>
 
               <mat-autocomplete #auto="matAutocomplete">
@@ -25,25 +25,25 @@
                 </mat-option>
               </mat-autocomplete>
               <mat-form-field fxFlex="40">
-                <input matInput type="text" placeholder="ชื่อ" [(ngModel)]="student.firstname" />
+                <input matInput type="text" required placeholder="ชื่อ" [(ngModel)]="student.firstname" />
               </mat-form-field>
               <mat-form-field fxFlex="40">
-                <input matInput type="text" placeholder="นามสกุล" [(ngModel)]="student.lastname" />
+                <input matInput type="text" required placeholder="นามสกุล" [(ngModel)]="student.lastname" />
               </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field fxFlex="65" hintLabel="*โรงเรียนที่กำลังศึกษาอยู่">
-                <input matInput type="text" placeholder="โรงเรียน" [(ngModel)]="student.school_name" />
+                <input matInput type="text" required placeholder="โรงเรียน" [(ngModel)]="student.school_name" />
               </mat-form-field>
-              <mat-form-field fxFlex="30">
-                <input matInput type="text" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="student.personal_id" />
+              <mat-form-field fxFlex="30"  hintLabel="*กรอกเฉพาะตัวเลขเท่านั้น">
+                <input matInput type="text" required minlength="13" maxlength="13" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="student.personal_id" />
               </mat-form-field>
             </div>
 
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field fxFlex="30">
-                <input matInput type="text" placeholder="ระดับชั้น" [(ngModel)]="student.level" />
+                <input matInput type="text" required placeholder="ระดับชั้น" [(ngModel)]="student.level" />
               </mat-form-field>
               <mat-form-field fxFlex="30">
                 <input matInput type="text" placeholder="ห้อง" [(ngModel)]="student.room" />
@@ -54,8 +54,8 @@
             </div>
 
             <div fxLayout="row" fxLayoutAlign="space-between start">
-              <mat-form-field fxFlex="30">
-                <input matInput type="text" placeholder="หมายเลขโทรศัพท์" [(ngModel)]="student.phone" />
+              <mat-form-field fxFlex="30" hintLabel="*กรอกเฉพาะตัวเลขเท่านั้น">
+                <input matInput type="text" required minlength="10" placeholder="หมายเลขโทรศัพท์" [(ngModel)]="student.phone" />
               </mat-form-field>
               <mat-form-field fxFlex="65">
                 <input matInput type="text" disabled [value]="school_name" placeholder="ศูนย์สอบ" />
