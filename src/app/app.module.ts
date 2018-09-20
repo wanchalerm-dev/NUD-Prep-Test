@@ -81,6 +81,9 @@ import { StudentRemoveComponent } from './pages/student/student-remove/student-r
 import { SchoolHomeComponent } from './pages/school/school-home/school-home.component';
 import { SchoolEditComponent } from './pages/school/school-edit/school-edit.component';
 import { DialogConfirmRemoveStudentComponent } from './pages/student/student-home/dialog-confirm-remove-student.component';
+import { BuildingHomeComponent } from './pages/building/building-home/building-home.component';
+import { BuildingCreateComponent } from './pages/building/building-create/building-create.component';
+import { DialogConfirmRemoveComponent } from './pages/building/building-home/dialog-confirm-remove.component';
 
 @NgModule({
   declarations: [
@@ -95,9 +98,13 @@ import { DialogConfirmRemoveStudentComponent } from './pages/student/student-hom
     SchoolHomeComponent,
     SchoolEditComponent,
     DialogConfirmRemoveStudentComponent,
+    BuildingHomeComponent,
+    BuildingCreateComponent,
+    DialogConfirmRemoveComponent,
   ],
   entryComponents: [
-    DialogConfirmRemoveStudentComponent
+    DialogConfirmRemoveStudentComponent,
+    DialogConfirmRemoveComponent
   ],
   imports: [
     AngularFireModule.initializeApp(angularFire),

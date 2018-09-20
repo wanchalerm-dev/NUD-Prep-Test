@@ -27,6 +27,35 @@ export class SchoolService {
     return this._post(param, 'updateSchoolData');
   }
 
+  createRoomTest(room){
+    const param = room;
+    return this._post(param, 'createRoomTest');
+  }
+
+  getMyRoomTestList(school_id){
+    const param = {
+      school_id: school_id
+    };
+    return this._post(param, 'getRoomTestListBySchool')
+  }
+
+  removeRoomTest(room){
+    const param = room;
+    return this._post(param, 'removeRoomTest');
+  }
+
+  getARoomTestInfo(id){
+    const param = {
+      id: id
+    };
+    return this._post(param, 'getARoomTestInfo');
+  }
+
+  editRoomTest(room){
+    const param = room;
+    return this._post(param, 'editRoomTest')
+  }
+
   private packParameter(param) {
     var _parameter = Object.keys(param).map(function (key) {
       return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);

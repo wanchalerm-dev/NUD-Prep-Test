@@ -1,0 +1,71 @@
+<section>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex></div>
+      <div fxFlex="70" style="padding-left: 10px;">
+        <h4>รายการห้องสอบ</h4>
+      </div>
+      <div fxFlex></div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex></div>
+      <div fxFlex="70">
+        <mat-card>
+          <mat-card-title>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div fxFlex>
+                <h5>ตารางรายชื่อห้องสอบสอบของศูนย์สอบ{{ schoolName }}</h5>
+              </div>
+              <div fxFlex class="text-right;" style="text-align: right;">
+                <button routerLink="/Building/NewBuilding" mat-raised-button color="primary" style="font-size: 20px;">
+                  <mat-icon>add_circle</mat-icon> เพิ่มห้องสอบ</button>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+          </mat-card-title>
+          <mat-card-content>
+            <div style="text-align: right; font-size: 20px; margin-bottom: 8px;">
+              [ จำนวนห้องสอบทั้งหมด {{ roomLength }} ห้อง ], [ จำนวนที่นั่งสอบทั้งหมด {{ testerCapacity }} ที่นั่งสอบ ]
+            </div>
+            <table style="width: 100%;">
+              <thead>
+                <tr style="background-color: #9e9e9e; font-size: 22px;">
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px; width: 10%;">ลำดับ</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">ชื่ออาคาร</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">ชื่อห้องสอบ</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">ความจุ (ที่นั่งสอบ)</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">การจัดที่นั่งสอบ</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">แก้ไข</td>
+                  <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">ลบ</td>
+                </tr>
+              </thead>
+              <tr *ngFor="let room of roomTestLis; let i = index;">
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">{{ (i+1) }}</td>
+                <td style="padding-left: 6px; padding-top: 8px; padding-bottom: 4px;">{{ room.building_name }}</td>
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">{{ room.room_name }} </td>
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">{{ room.room_capacity }} </td>
+                <td style="text-align: left; padding-top: 8px; padding-bottom: 4px; padding-left: 6px;">
+                  <span *ngIf="room.room_type == 0">ผสมระดับชั้น</span>
+                  <span *ngIf="room.room_type == 4">เฉพาะระดับชั้น ป.4 เท่านั้น</span>
+                  <span *ngIf="room.room_type == 5">เฉพาะระดับชั้น ป.5 เท่านั้น</span>
+                  <span *ngIf="room.room_type == 6">เฉพาะระดับชั้น ป.6 เท่านั้น</span>
+                </td>
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">
+                  <button (click)="gotoEdit(room.id)" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">
+                  <button (click)="openDialogConfirmRemoveRoom(room)" mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex></div>
+    </div>
+  </article>
+</section>

@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <a fxHide="true" fxHide.gt-sm="false" href="/Home" class="logo">
+  <a fxHide="true" fxHide.gt-sm="false" routerLink="/Home" class="logo">
     <img src="/assets/logo/satit_name.png">
   </a>
 
@@ -10,11 +10,11 @@
   <mat-menu #menu1="matMenu">
     <button routerLink="/School" mat-menu-item>
       <mat-icon>event_note</mat-icon>การแก้ไขข้อมูลศูนย์สอบ</button>
-    <button mat-menu-item disabled>
+    <button routerLink="/Building" mat-menu-item >
       <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
-    <button mat-menu-item disabled>
+    <button mat-menu-item >
       <mat-icon>contacts</mat-icon>ห้องสอบ</button>
-    <button mat-menu-item disabled>
+    <button mat-menu-item >
       <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
     <button mat-menu-item disabled>
       <mat-icon>blur_linear</mat-icon>แผนผังที่นั่งสอบ</button>

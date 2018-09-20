@@ -12,6 +12,8 @@ import { StudentEditComponent } from '../pages/student/student-edit/student-edit
 import { StudentRemoveComponent } from '../pages/student/student-remove/student-remove.component';
 import { SchoolHomeComponent } from '../pages/school/school-home/school-home.component';
 import { SchoolEditComponent } from '../pages/school/school-edit/school-edit.component';
+import { BuildingHomeComponent } from '../pages/building/building-home/building-home.component';
+import { BuildingCreateComponent } from '../pages/building/building-create/building-create.component';
 
 
 const PrepTest_ROUTES: Routes = [
@@ -32,6 +34,30 @@ const PrepTest_ROUTES: Routes = [
         {
           path: 'Edit/:id',
           component: SchoolEditComponent
+        },
+      ]
+  },
+  {
+    path: 'Building',
+    component: MainPageComponent,
+    canActivateChild: [],
+    children:
+      [
+        {
+          path: '',
+          component: BuildingHomeComponent
+        },
+        {
+          path: 'Home',
+          component: BuildingHomeComponent
+        },
+        {
+          path: 'NewBuilding',
+          component: BuildingCreateComponent
+        },
+        {
+          path: 'EditBuilding/:id',
+          component: BuildingCreateComponent
         }
       ]
   },
