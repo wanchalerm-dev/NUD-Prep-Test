@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { StudentService } from '../../../service/student.service';
+import { SchoolService } from '../../../service/school.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,6 +14,7 @@ export class StudentCreateComponent implements OnInit {
 
   stateCtrl: FormControl;
   filteredStates: any;
+  schoolGroupList = [];
   student = {
     id: '',
     personal_id: '',
@@ -37,7 +39,10 @@ export class StudentCreateComponent implements OnInit {
   states = ['เด็กชาย', 'เด็กหญิง'];
   auto: any;
 
-  constructor(private studentService: StudentService, private _router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private studentService: StudentService, private _router: Router, private activeRoute: ActivatedRoute, private schoolService: SchoolService) {
+    this.schoolService.getNameSchoolGroup(window.localStorage.getItem('school_id')).then(resReturn => {
+      console.log(resReturn);
+    });
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges.pipe(
       startWith(null),
@@ -67,6 +72,8 @@ export class StudentCreateComponent implements OnInit {
         });
       }
     });
+
+    
   }
 
   ngOnInit() {

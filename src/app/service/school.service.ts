@@ -56,6 +56,13 @@ export class SchoolService {
     return this._post(param, 'editRoomTest')
   }
 
+  getNameSchoolGroup(id){
+    const param = {
+      school_id: id
+    };
+    return this._post(param, 'getNameSchoolGroup');
+  }
+
   private packParameter(param) {
     var _parameter = Object.keys(param).map(function (key) {
       return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);

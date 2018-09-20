@@ -55,7 +55,7 @@
             <div fxLayout="row" fxLayoutAlign="end">
               <button style="font-size: 20px;" *ngIf="action == 'create'" (click)="createNewRoom()" mat-raised-button color="primary"><mat-icon>save</mat-icon> บันทึก</button>
               <button style="font-size: 20px;" *ngIf="action == 'edit'" (click)="editRoom()" mat-raised-button color="primary"><mat-icon>edit</mat-icon> แก้ข้อมูล</button>
-              <button routerLink="/Building" style="margin-left: 25px; font-size: 20px;" (click)="createNewRoom()" mat-raised-button color="warn"><mat-icon>cancel</mat-icon> ยกเลิก</button>
+              <button routerLink="/Building" style="margin-left: 25px; font-size: 20px;" mat-raised-button color="warn"><mat-icon>cancel</mat-icon> ยกเลิก</button>
             </div>
           </mat-card-content>
         </mat-card>
