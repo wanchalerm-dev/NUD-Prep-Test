@@ -21,7 +21,7 @@
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
                                 ครั้งที่ 2
                             </mat-card-title>
                         </mat-card-title-group>
@@ -36,9 +36,11 @@
                             <ol style="font-size: 22px;">
                                 <li>เพิ่มส่วนการจัดการห้องสอบ (เพิ่มห้องสอบ, แก้ไข, ลบ)</li>
                                 <li>แบบฟอร์มการเพิ่ม/แก้ไขข้อมูลนักเรียน มีการปรับส่วนการบันทึกระดับชั้น จากเดิมเป็นแบบกรอก
-                                    ให้เป็นแบบตัวเลือกเพื่อให้ข้อมูลมีลักษณะเดียวกัน</li>
+                                    ให้เป็นแบบตัวเลือกเพื่อให้ข้อมูลมีลักษณะเดียวกัน
+                                </li>
                                 <li>แบบฟอร์มการเพิ่ม/แก้ไขข้อมูลนักเรียน มีการปรับส่วนการบันทึกชื่อโรงเรียนปัจจุบัน โดยการนำรายชื่อโรงเรียนดังกล่าวจากฐานข้อมูลที่ศูนย์สอบของท่านเคยรับสมัครไว้มาแสดงเป็นตัวเลือก
-                                    เพื่อลดการพิมพ์ชื่อโรงเรียนผิดพลาด</li>
+                                    เพื่อลดการพิมพ์ชื่อโรงเรียนผิดพลาด
+                                </li>
                             </ol>
                             <p style="font-size: 22px; text-indent: 1.5em;">
                                 โดยท่านสามารถคลิกที่เมนู ศูนย์สอบ และอาคารสอบ แล้วคลิกเลือกที่ สถานที่สอบ ให้ผู้ประสานงานระบุห้องสอบที่จะใช้งานการทดสอบ ทั้งนี้ข้อมูลดังกล่าว
@@ -52,7 +54,7 @@
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
                                 ครั้งที่ 1
                             </mat-card-title>
                         </mat-card-title-group>
@@ -75,7 +77,7 @@
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone.png" style="position: relative; top: 6px;">                                ยินดีต้อนรับผู้ประสานงานศูนย์สอบ</mat-card-title>
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                ยินดีต้อนรับผู้ประสานงานศูนย์สอบ</mat-card-title>
                         </mat-card-title-group>
                         <mat-card-subtitle>
                             เผยแพร่เมื่อ: 14 กันยายน 2561 เวลา 12.30 น.
@@ -106,34 +108,44 @@
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/person-reading-at-the-office.png" style="position: relative; top: 6px;">                                ความจุที่นั่งสอบ</mat-card-title>
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/person-reading-at-the-office2.png" style="position: relative; top: 6px;">                                ความจุที่นั่งสอบ</mat-card-title>
                         </mat-card-title-group>
-                        <mat-divider></mat-divider>
+
                         <mat-card-content>
-                            <p>
-                            </p>
+                            <div fxLayout="column" *ngFor="let item of ratingItems;let i = index;">
+                                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center" style="padding-top:12px;padding-bottom:10px;">
+                                    <div fxFlex="5">{{i+1}}</div>
+                                    <div fxFlex="20" class="text-left">
+                                        {{item.name}}<br>{{item.tag}}
+                                    </div>
+                                    <mat-progress-bar [mode]="'determinate'" [value]="item.value"></mat-progress-bar>
+                                    <div fxFlex="7" class="text-right"> {{item.value}}%</div>
+                                </div>
+
+                                <mat-divider></mat-divider>
+                            </div>
                         </mat-card-content>
                     </mat-card>
                     <!-- การ์ด 2 -->
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/users-group.png" style="position: relative; top: 6px;">                                ยอดการสมัครแต่ละระดับชั้น</mat-card-title>
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/users-group2.png" style="position: relative; top: 6px;">                                ยอดการสมัครแต่ละระดับชั้น</mat-card-title>
                         </mat-card-title-group>
                         <mat-divider></mat-divider>
                         <mat-card-content>
-                            <div echarts [options]="nestedOption" (chartInit)="chartInstances.push($event)" class="chart"></div>
+                            <div echarts [options]="lineChartOption" (chartInit)="chartInstances.push($event)" class="line-chart"></div>
                         </mat-card-content>
                     </mat-card>
                     <!-- การ์ด 3 -->
                     <mat-card class="card-type-eighth">
                         <mat-card-title-group>
                             <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/team-leader.png" style="position: relative; top: 6px;">                                ยอดนักเรียนภายนอกและภายใน</mat-card-title>
+                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/team-leader2.png" style="position: relative; top: 6px;">                                ยอดนักเรียนภายนอกและภายใน</mat-card-title>
                         </mat-card-title-group>
                         <mat-divider></mat-divider>
                         <mat-card-content>
-                            <div echarts [options]="customizedOption" (chartInit)="chartInstances.push($event)" class="chart"></div>
+                            <div echarts [options]="nestedOption" (chartInit)="chartInstances.push($event)" class="chart"></div>
                         </mat-card-content>
                     </mat-card>
                 </div>
