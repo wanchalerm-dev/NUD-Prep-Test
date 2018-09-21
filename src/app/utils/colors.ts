@@ -31,17 +31,18 @@ export const MAT_DEEP_ORANGE = {
   A400: '#ff3d00',
   A700: '#dd2c00'
 };
-export const MAT_DEEP_BROWN = {
-  _50: '#D7CCC8',
-  _100: '#BCAAA4',
-  _200: '#A1887F',
-  _300: '#8D6E63',
-  _400: '#795548',
-  _500: '#6D4C41',
-  _600: '#f4511e',
-  _700: '#5D4037',
-  _800: '#4E342E',
-  _900: '#3E2723'
+
+export const MAT_DEEP_GREEN = {
+  _50: '#C8E6C9',
+  _100: '#A5D6A7',
+  _200: '#81C784',
+  _300: '#66BB6A',
+  _400: '#4CAF50',
+  _500: '#4CAF50',
+  _600: '#43A047',
+  _700: '#388E3C',
+  _800: '#2E7D32',
+  _900: '#1B5E20'
 };
 export const CHART_TEXT_COLOR = '#9B9B9B';
 
