@@ -37,10 +37,16 @@
 
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field fxFlex="65" hintLabel="*โรงเรียนที่กำลังศึกษาอยู่">
-                <input matInput type="text" required placeholder="โรงเรียน" [(ngModel)]="student.school_name" />
+                <input matInput type="text" required placeholder="โรงเรียน" [(ngModel)]="student.school_name"  [formControl]="myControlSchoolList" [matAutocomplete]="schList"/>
+                <mat-autocomplete #schList="matAutocomplete">
+                  <mat-option *ngFor="let option of schoolGroupList" [value]="option.school_name">
+                    {{option.school_name}}
+                  </mat-option>
+                </mat-autocomplete>
               </mat-form-field>
-              <mat-form-field fxFlex="30"  hintLabel="*กรอกเฉพาะตัวเลขเท่านั้น">
-                <input matInput type="text" required minlength="13" maxlength="13" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="student.personal_id" />
+              <mat-form-field fxFlex="30" hintLabel="*กรอกเฉพาะตัวเลขเท่านั้น">
+                <input matInput type="text" required minlength="13" maxlength="13" placeholder="เลขประจำตัวประชาชน" [(ngModel)]="student.personal_id"
+                />
                 <mat-error>จำนวนหลักของเลขประจำตัวประชาชนไม่ถูกต้อง</mat-error>
               </mat-form-field>
             </div>
@@ -48,9 +54,9 @@
             <div fxLayout="row" fxLayoutAlign="space-between start">
               <mat-form-field fxFlex="30">
                 <mat-select [(ngModel)]="student.level">
-                    <mat-option value="ป.4">ระดับชั้นประถมศึกษาปีที่ 4</mat-option>
-                    <mat-option value="ป.5">ระดับชั้นประถมศึกษาปีที่ 5</mat-option>
-                    <mat-option value="ป.6">ระดับชั้นประถมศึกษาปีที่ 6</mat-option>
+                  <mat-option value="ป.4">ระดับชั้นประถมศึกษาปีที่ 4</mat-option>
+                  <mat-option value="ป.5">ระดับชั้นประถมศึกษาปีที่ 5</mat-option>
+                  <mat-option value="ป.6">ระดับชั้นประถมศึกษาปีที่ 6</mat-option>
                 </mat-select>
                 <!-- <input matInput type="text" required placeholder="ระดับชั้น"  /> -->
               </mat-form-field>

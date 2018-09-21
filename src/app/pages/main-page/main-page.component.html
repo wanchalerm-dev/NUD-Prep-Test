@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <a fxHide="true" fxHide.gt-sm="false" routerLink="/Home" class="logo">
+  <a fxHide="true" style="margin-right: 20px;" fxHide.gt-sm="false" routerLink="/Home" class="logo">
     <img src="/assets/logo/satit_name.png">
   </a>
 
@@ -11,10 +11,8 @@
     <button routerLink="/School" mat-menu-item>
       <mat-icon>event_note</mat-icon>การแก้ไขข้อมูลศูนย์สอบ</button>
     <button routerLink="/Building" mat-menu-item >
-      <mat-icon>account_balance</mat-icon>อาคารสอบ</button>
-    <button mat-menu-item >
-      <mat-icon>contacts</mat-icon>ห้องสอบ</button>
-    <button mat-menu-item >
+      <mat-icon>account_balance</mat-icon>สถานที่สอบ</button>
+    <button mat-menu-item disabled>
       <mat-icon>people</mat-icon>กรรมการคุมสอบ</button>
     <button mat-menu-item disabled>
       <mat-icon>blur_linear</mat-icon>แผนผังที่นั่งสอบ</button>
@@ -57,14 +55,14 @@
     <button mat-menu-item disabled> <mat-icon>cloud_upload</mat-icon>อัพโหลดหลักฐานการโอนเงิน</button>
   </mat-menu> -->
 
-  <button mat-button [matMenuTriggerFor]="menu5">
+  <!-- <button disabled mat-button [matMenuTriggerFor]="menu5">
     <mat-icon>collections_bookmark</mat-icon>
     คู่มือการใช้งาน
   </button>
   <mat-menu #menu5="matMenu">
-    <button routerLink="" mat-menu-item>
+    <button routerLink="" mat-menu-item disabled>
       <mat-icon>event_note</mat-icon>การแก้ไขข้อมูลศูนย์สอบ</button>
-  </mat-menu>
+  </mat-menu> -->
 
   <span fxFlex></span>
   <span>{{school_name}}</span>

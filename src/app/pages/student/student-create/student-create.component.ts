@@ -30,7 +30,7 @@ export class StudentCreateComponent implements OnInit {
   };
   school_name: any;
   school_id: any;
-
+  myControlSchoolList: any;
   action: any;
 
   _sliderTickInterval = 1;
@@ -42,8 +42,10 @@ export class StudentCreateComponent implements OnInit {
   constructor(private studentService: StudentService, private _router: Router, private activeRoute: ActivatedRoute, private schoolService: SchoolService) {
     this.schoolService.getNameSchoolGroup(window.localStorage.getItem('school_id')).then(resReturn => {
       console.log(resReturn);
+      this.schoolGroupList = resReturn['schoolList'];
     });
     this.stateCtrl = new FormControl();
+    this.myControlSchoolList = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges.pipe(
       startWith(null),
       map(name => this.filterStates(name)));
