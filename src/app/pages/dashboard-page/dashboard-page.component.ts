@@ -106,7 +106,7 @@ export class DashboardPageComponent implements OnInit {
         center: ['50%', '50%'],
         data: [
           { value: this.valueInner, name: 'ภายใน',color: MAT_LIGHT_BLUE._300 },
-          { value: this.valueOuter, name: 'ภายนอก' ,color: MAT_LIGHT_BLUE._700}
+          { value: this.valueOuter, name: 'ภายนอก' ,color: '#4e342e'}
         ].sort(function (a, b) {
           return a.value - b.value;
         }),

@@ -11,7 +11,6 @@ import { MatDialog, MatDialogRef } from '@angular/material';
   styleUrls: ['./student-home.component.scss']
 })
 export class StudentHomeComponent implements OnInit {
-  @HostBinding('@routerAnimation') routerAnimation = true;
   studentList = [];
   selectedOption: string;
   totalStudent: any;
