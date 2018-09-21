@@ -63,6 +63,13 @@ export class SchoolService {
     return this._post(param, 'getNameSchoolGroup');
   }
 
+  getCountSchool(school_id){
+    const param = {
+      school_id: school_id
+    };
+    return this._post(param, 'getCountSchool');
+  }
+
   private packParameter(param) {
     var _parameter = Object.keys(param).map(function (key) {
       return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);

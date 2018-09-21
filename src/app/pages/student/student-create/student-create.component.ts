@@ -105,9 +105,10 @@ export class StudentCreateComponent implements OnInit {
   }
 
   editStudent(){
+    this.student.school_name = this.student.school_name.replace('"', '\"');
     this.studentService.editStudent(this.student).then(res => {
-      // console.log(res);
-      this._router.navigateByUrl('/Students');
+      console.log(res);
+      // this._router.navigateByUrl('/Students');
     });
   }
 
