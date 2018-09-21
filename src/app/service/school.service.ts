@@ -63,6 +63,13 @@ export class SchoolService {
     return this._post(param, 'getNameSchoolGroup');
   }
 
+  getNumberStudentGroupByLevel(id){
+    const param = {
+      school_id: id
+    };
+    return this._post(param, 'getCountGroupStudentLevel');
+  }
+
   getCountSchool(school_id){
     const param = {
       school_id: school_id
