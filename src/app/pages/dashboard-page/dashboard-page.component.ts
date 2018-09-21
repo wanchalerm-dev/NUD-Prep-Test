@@ -63,6 +63,18 @@ export class DashboardPageComponent implements OnInit {
     this.schoolServicce.getCountSchool(window.localStorage.getItem("school_id")).then(res => {
       // Model for simple line chart
       this.lineChartOption = {
+        toolbox: {
+          show: true,
+          feature: {
+            saveAsImage: {
+              type: 'png',
+              name: 'กราฟจำนวนนักเรียนแต่ละระดับชั้น',
+              show: true,
+              title: 'Save As Image',
+              pixelRatio: 3
+            }
+          }
+        },
         tooltip: {
           trigger: 'item'
         },
