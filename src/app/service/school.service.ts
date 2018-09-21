@@ -53,7 +53,7 @@ export class SchoolService {
 
   editRoomTest(room){
     const param = room;
-    return this._post(param, 'editRoomTest')
+    return this._post(param, 'editRoomTest');
   }
 
   getNameSchoolGroup(id){
