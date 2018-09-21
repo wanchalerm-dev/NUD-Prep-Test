@@ -31,6 +31,17 @@ export const MAT_DEEP_ORANGE = {
   A400: '#ff3d00',
   A700: '#dd2c00'
 };
-
+export const MAT_DEEP_BROWN = {
+  _50: '#D7CCC8',
+  _100: '#BCAAA4',
+  _200: '#A1887F',
+  _300: '#8D6E63',
+  _400: '#795548',
+  _500: '#6D4C41',
+  _600: '#f4511e',
+  _700: '#5D4037',
+  _800: '#4E342E',
+  _900: '#3E2723'
+};
 export const CHART_TEXT_COLOR = '#9B9B9B';
 
