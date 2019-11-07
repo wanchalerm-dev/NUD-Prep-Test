@@ -12,7 +12,7 @@ export class SchoolService {
   private _host;
 
   constructor(private _http: Http) {
-    this._host = 'http://www.satit.nu.ac.th/node/nudPrepTest';
+    this._host = 'https://www.satit.nu.ac.th/node/nudPrepTest';
   }
 
   schoolInfo(schoolId){
@@ -77,12 +77,50 @@ export class SchoolService {
     return this._post(param, 'getCountSchool');
   }
 
+  getPaymentInfoBySchool(school_id){
+    const param = {
+      school_id: school_id
+    };
+    return this._post(param, 'getPaymentInfoBySchool');
+  }
+
+  getCountMember(){
+    const param = {
+    };
+    return this._post(param, 'getCountMember');
+  }
+
+  newPayment(school_id, image, amount, date){
+    const param = {
+      school_id: school_id,
+      image: image,
+      amount: amount,
+      date: date
+    };
+    return this._post(param, 'insertPayment');
+  }
+
+  updateCommittee(room_id, committee1_prename, committee1_firstname, committee1_lastname, committee2_prename, committee2_firstname, committee2_lastname){
+    const param = {
+      room_id: room_id,
+      committee1_prename: committee1_prename,
+      committee1_firstname: committee1_firstname,
+      committee1_lastname: committee1_lastname,
+      committee2_prename: committee2_prename,
+      committee2_firstname: committee2_firstname,
+      committee2_lastname: committee2_lastname
+    };
+    return this._post(param, 'updateCommittee');
+  }
+
   private packParameter(param) {
     var _parameter = Object.keys(param).map(function (key) {
       return encodeURIComponent(key) + '=' + encodeURIComponent(param[key]);
     }).join('&');
     return _parameter;
   }
+
+  
 
   private _post(param, action) {
     return new Promise((resolve, reject) => {

@@ -12,7 +12,7 @@ export class UserService {
   private _host;
 
   constructor(private fireAuth: AngularFireAuth, private _http: Http) {
-    this._host = 'http://www.satit.nu.ac.th/node/nudPrepTest';
+    this._host = 'https://www.satit.nu.ac.th/node/nudPrepTest';
   }
 
   private packParameter(param) {

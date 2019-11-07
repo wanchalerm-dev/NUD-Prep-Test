@@ -1,0 +1,39 @@
+<section>
+  <article>
+    <div fxlayout="row" fxLayoutAlign="center start">
+      <div fxFlex="70">
+        <mat-card>
+          <mat-card-title>
+            <h3>การกำหนดรายชื่อกรรมการคุมสอบ</h3>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <p>
+              การกำหนดรายชื่อกรรมการคุมสอบจะต้องมีการบันทึกข้อมูลสถานที่สอบก่อน หากท่านไม่พบรายการ โปรดคลิกที่เมนู ศูนย์สอบและสถานที่สอบ และเข้าไปบันทึกข้อมูลสถานที่สอบ แล้วจึงกำหนดกรรมการคุมสอบ
+            </p>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <table style="width: 100%;">
+              <tr style="background-color: #9e9e9e; font-size: 22px;">
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px; width: 10%;">ลำดับ</td>
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">อาคารสอบ</td>
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">ห้องสอบ</td>
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">กรรมการคุมสอบท่านที่ 1</td>
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">กรรมการคุมสอบท่านที่ 2</td>
+                <td style="text-align: center; padding-top: 12px; padding-bottom: 6px;">จัดการข้อมูล</td>
+              </tr>
+              <tr *ngFor="let room of roomTestList; let i = index;">
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;">{{ (i + 1)}}</td>
+                <td style="padding-left: 6px; padding-top: 8px; padding-bottom: 4px;">{{ room.building_name }}</td>
+                <td style="padding-left: 6px; padding-top: 8px; padding-bottom: 4px;">{{ room.room_name }}</td>
+                <td style="padding-left: 6px; padding-top: 8px; padding-bottom: 4px;">{{ room.committee1_prename + room.committee1_firstname + ' ' + room.committee1_lastname }}</td>
+                <td style="padding-left: 6px; padding-top: 8px; padding-bottom: 4px;">{{ room.committee2_prename + room.committee2_firstname + ' ' + room.committee2_lastname }}</td>
+                <td style="text-align: center; padding-top: 8px; padding-bottom: 4px;"><a routerLink="/Committee/EditCommittee/{{ room.id }}">จัดการข้อมูล</a></td>
+              </tr>
+            </table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+  </article>
+</section>

@@ -1,0 +1,28 @@
+<section>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+      <div fxFlex="70">
+        <mat-card>
+          <mat-card-title>
+            <h3>แผนภูมิจำนวนผู้สมัครสอบแต่ละศูนย์สอบ</h3>
+          </mat-card-title>
+          <mat-card-content>
+              <div echarts [options]="schoolChart" style="height: 600px;" class="line-chart"></div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="30">
+        <mat-card>
+          <mat-card-title>
+            <h3>ยอดรวมผู้สมัครสอบทั้งหมด</h3>
+          </mat-card-title>
+          <mat-card-content>
+            <div style="text-align: right; font-size: 100px; color: #2196f3; padding-top: 15px;">
+              {{ totalStudent | number }} <span style="font-size: 22px; color: black;">คน</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </article>
+</section>

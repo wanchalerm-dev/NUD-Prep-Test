@@ -11,42 +11,18 @@ import { Router, RouterLink } from '@angular/router';
   animations: [routerAnimation]
 })
 export class MainPageComponent implements OnInit, AfterViewInit {
-  // Add router animation
   @HostBinding('@routerAnimation') routerAnimation = true;
-  // Applying theme class
   @HostBinding('class.dark-theme') darkTheme = false;
+
   _sidenavMode = 'side';
   _boxedLayout = false;
   sideNavOpened = false;
   fullname: any;
   myPosition: any;
   school_name: any;
-
-  // Data for messages at popup
-
   user_image: any;
-
-  messages = [
-    {
-      subject: 'Monthly report',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      image: 'assets/avatars/4040.png',
-      time: '18:05'
-    },
-    {
-      subject: 'Holiday party',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      image: 'assets/avatars/4040.png',
-      time: '3 hrs ago'
-    },
-    {
-      subject: 'Salary bonus',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      image: 'assets/avatars/4040.png',
-      time: '2 days ago'
-    }
-  ];
-
+  role: any;
+  testerCardLink: any;
 
   constructor(public resizeService: ResizeService, private router: Router) {
     this.onResize();
@@ -54,6 +30,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.school_name = window.localStorage.getItem('school_name');
+    this.role = window.localStorage.getItem('role');
+    this.testerCardLink = 'http://www.satit.nu.ac.th/PrepTesting/TesterCard.php?school_code=' + btoa(window.localStorage.getItem('school_code'));
   }
 
   gotoDashboard() {
@@ -61,10 +39,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Resize after sidenav open on startup to draw charts correctly
     setTimeout(() => this.resizeService.resizeInformer$.next(), 500);
     setTimeout(() => {
-      // this.sideNavOpened = true
       this.sideNavOpened = false;
       this._sidenavMode = 'push';
     }, 0);

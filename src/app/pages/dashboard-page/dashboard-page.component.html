@@ -1,155 +1,75 @@
 <section>
     <header>
-        <mat-card>
-            <mat-card-title>
-                <h4>
-                    <mat-icon style="position: relative; top: 3px;">web</mat-icon> ระบบจัดการข้อมูลโครงการ NUD Prep Test
-                </h4>
-            </mat-card-title>
-            <mat-card-subtitle>
-                ประจำปี 2018
-            </mat-card-subtitle>
-        </mat-card>
-
+        <div class="text-center">
+            <h3>
+                .: ระบบจัดการข้อมูลโครงการ NUD Prep Test :.
+            </h3>
+        </div>
+        <br />
     </header>
-    <div fxLayout="row" fxLayoutAlign="space-around start">
-        <article>
-            <div fxLayout="column" fxLayout.gt-md="row">
-                <!-- คอลัม 1 -->
-                <div fxFlex="1 0 auto" fxFlex.gt-md="65">
-                    <!-- การ์ด 3 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
-                                ครั้งที่ 2
-                            </mat-card-title>
-                        </mat-card-title-group>
-                        <mat-card-subtitle>
-                            เผยแพร่เมื่อ: 20 กันยายน 2561 เวลา 18.00 น.
-                        </mat-card-subtitle>
-                        <mat-divider></mat-divider>
-                        <mat-card-content>
-                            <p style="font-size: 22px; text-indent: 1.5em;">
-                                ระบบจัดการข้อมูลโครงการ NUD Prep Test มีการปรับเพิ่มฟังก์ชันการใช้งานในส่วนของสถานที่สอบดังนี้
-                            </p>
-                            <ol style="font-size: 22px;">
-                                <li>เพิ่มส่วนการจัดการห้องสอบ (เพิ่มห้องสอบ, แก้ไข, ลบ)</li>
-                                <li>แบบฟอร์มการเพิ่ม/แก้ไขข้อมูลนักเรียน มีการปรับส่วนการบันทึกระดับชั้น จากเดิมเป็นแบบกรอก
-                                    ให้เป็นแบบตัวเลือกเพื่อให้ข้อมูลมีลักษณะเดียวกัน
-                                </li>
-                                <li>แบบฟอร์มการเพิ่ม/แก้ไขข้อมูลนักเรียน มีการปรับส่วนการบันทึกชื่อโรงเรียนปัจจุบัน โดยการนำรายชื่อโรงเรียนดังกล่าวจากฐานข้อมูลที่ศูนย์สอบของท่านเคยรับสมัครไว้มาแสดงเป็นตัวเลือก
-                                    เพื่อลดการพิมพ์ชื่อโรงเรียนผิดพลาด
-                                </li>
-                            </ol>
-                            <p style="font-size: 22px; text-indent: 1.5em;">
-                                โดยท่านสามารถคลิกที่เมนู ศูนย์สอบ และอาคารสอบ แล้วคลิกเลือกที่ สถานที่สอบ ให้ผู้ประสานงานระบุห้องสอบที่จะใช้งานการทดสอบ ทั้งนี้ข้อมูลดังกล่าว
-                                จะถูกใช้ในการพิมพ์บัตรประจำตัวผู้เข้าสอบ กระดาษคำตอบ ซองข้อสอบ ซองกระดาษคำตอบ และในเอกกสารอื่น
-                                ๆ ที่เกี่ยวข้องต่อไป
-                            </p>
-                        </mat-card-content>
-                    </mat-card>
-
-                    <!-- การ์ด 2 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                แจ้งการอัดเดทซอฟต์แวร์
-                                ครั้งที่ 1
-                            </mat-card-title>
-                        </mat-card-title-group>
-                        <mat-card-subtitle>
-                            เผยแพร่เมื่อ: 19 กันยายน 2561 เวลา 16.00 น.
-                        </mat-card-subtitle>
-                        <mat-divider></mat-divider>
-                        <mat-card-content>
-                            <p style="font-size: 22px; text-indent: 1.5em;">
-                                ระบบจัดการข้อมูลโครงการ NUD Prep Test มีการปรับเพิ่มฟังก์ชันการใช้งานในส่วนของรายชื่อนักเรียนที่สมัครเข้าร่วมโครงการดังนี้
-                            </p>
-                            <ol style="font-size: 22px;">
-                                <li>การแก้ไขข้อมูลนักเรียน</li>
-                                <li>การลบข้อมูลนักเรียน</li>
-                                <li>การแสดงจำนวนนักเรียนทั้งหมดด้านบนขวาของตารางรายชื่อนักเรียน</li>
-                            </ol>
-                        </mat-card-content>
-                    </mat-card>
-                    <!-- การ์ด 1 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/megaphone2.png" style="position: relative; top: 6px;">                                ยินดีต้อนรับผู้ประสานงานศูนย์สอบ</mat-card-title>
-                        </mat-card-title-group>
-                        <mat-card-subtitle>
-                            เผยแพร่เมื่อ: 14 กันยายน 2561 เวลา 12.30 น.
-                        </mat-card-subtitle>
-                        <mat-divider></mat-divider>
-                        <mat-card-content>
-                            <p style="font-size: 22px; text-indent: 1.5em;">
-                                ยินดีต้อนรับผู้ประสานงานศูนย์สอบเข้าสู่ระบบจัดการข้อมูลโครงการ NUD Prep Test ประจำปี 2018 ระบบนี้เป็นระบบที่จะใช้บันทึกข้อมูลศูนย์สอบ
-                                และผู้สมัครเข้าร่วมทดสอบ ตลอดจนการดำเนินการต่าง ๆ ที่เกี่ยวข้องกับโครงการฯ ในเบื้องต้นนี้ขอให้ผู้ประสานงานศูนย์สอบดำเนินการดังนี้
-                                <br />
-
-                            </p>
-                            <ol style="font-size: 22px;">
-                                <li>ที่เมนูศูนย์สอบและสถานที่สอบ เลือกที่การแก้ไขข้อมูลศูนย์สอบ ให้ผู้ประสานงานแก้ไขข้อมูลของศูนย์สอบให้ครบถ้วนเพื่อใช้ในการจัดส่งข้อสอบ</li>
-                                <li>ที่เมนูนักเรียนให้บันทึกข้อมูลของนักเรียนลงในระบบ</li>
-                            </ol>
-                            <p style="font-size: 22px; text-indent: 1.5em;">
-                                ในส่วนการบันทึกข้อมูลสถานที่ของศูนย์สอบ หรือการบันทึกข้อมูลส่วนอื่นๆ ระบบกำลังปรับปรุงทีละส่วนและจะแจ้งให้ศูนย์สอบทราบเป็นระยะ
-                                หากพบว่าระบบขัดข้องโปรดติอต่อเจ้าหน้าที่หมายเลขโทรศัพท์ 081-675-2065 เพื่อให้คำแนะนำ และแก้ไขปัญหาการใช้งานระบบของท่าน
-                                และหากโครงการมีเรื่องแจ้งให้ศูนย์สอบทราบจะประชาสัมพันธ์ไว้ที่ระบบนี้ โปรดเข้าสู่ระบบเพื่อติดตามข่าวสาร
-                            </p>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-                <!-- คอลัม 2 -->
-                <div fxFlex="1 0 auto" fxFlex.gt-md="35">
-                    <!-- การ์ด 1 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/person-reading-at-the-office2.png" style="position: relative; top: 6px;">                                ความจุที่นั่งสอบ</mat-card-title>
-                        </mat-card-title-group>
-
-                        <mat-card-content>
-                            <div fxLayout="column" *ngFor="let item of ratingItems;let i = index;">
-                                <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center" style="padding-top:12px;padding-bottom:10px;">
-                                    <div fxFlex="5">{{i+1}}</div>
-                                    <div fxFlex="20" class="text-left">
-                                        {{item.name}}<br>{{item.tag}}
-                                    </div>
-                                    <mat-progress-bar [mode]="'determinate'" [value]="item.value"></mat-progress-bar>
-                                    <div fxFlex="7" class="text-right"> {{item.value}}%</div>
-                                </div>
-
-                                <mat-divider></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxFlex="33">
+            <!-- การ์ด 2 -->
+            <mat-card class="card-type-eighth">
+                <mat-card-title-group>
+                    <mat-card-title>
+                        <img src="https://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/users-group2.png" style="position: relative; top: 6px;"> ยอดการสมัครแต่ละระดับชั้น</mat-card-title>
+                </mat-card-title-group>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <div echarts [options]="lineChartOption" (chartInit)="chartInstances.push($event)" class="line-chart"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex="33">
+            <!-- การ์ด 3 -->
+            <mat-card class="card-type-eighth">
+                <mat-card-title-group>
+                    <mat-card-title>
+                        <img src="https://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/team-leader2.png" style="position: relative; top: 6px;"> สัดส่วนนักเรียนที่สมัครแต่ละโรงเรียน</mat-card-title>
+                </mat-card-title-group>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <div echarts [options]="nestedOption" (chartInit)="chartInstances.push($event)" class="chart"></div>
+                    <mat-divider></mat-divider>
+                    <div class="text-center primary-color-dark" style="font-size: 40px; padding-top: 35px;">
+                        ยอดรวมผู้สมัครทั้งหมด {{ studentTotal }} คน
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex="34">
+            <!-- การ์ด 1 -->
+            <mat-card class="card-type-eighth">
+                <mat-card-title-group>
+                    <mat-card-title>
+                        <img src="https://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/person-reading-at-the-office2.png" style="position: relative; top: 6px;"> ความจุที่นั่งสอบ</mat-card-title>
+                </mat-card-title-group>
+                <mat-card-subtitle>
+                    โปรดระบุข้อมูลเกี่ยวกับสถานที่สอบโดยคลิกที่เมนูศูนย์สอบและสถานที่สอบ และเลือกที่สถานที่สอบ และเพิ่มห้องสอบที่ศูนย์สอบรองรับ
+                </mat-card-subtitle>
+                <mat-card-content>
+                    <div fxLayout="column" *ngFor="let item of ratingItems;let i = index;">
+                        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center" style="padding-top:12px;padding-bottom:10px;">
+                            <div fxFlex="5">{{i+1}}</div>
+                            <div fxFlex="35" class="text-left">
+                                <strong>อาคารสอบ: </strong>
+                                <span class="accent-color">{{item.name}}</span>
+                                <br>
+                                <strong>ห้องสอบ: </strong> {{item.tag}}
                             </div>
-                        </mat-card-content>
-                    </mat-card>
-                    <!-- การ์ด 2 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/users-group2.png" style="position: relative; top: 6px;">                                ยอดการสมัครแต่ละระดับชั้น</mat-card-title>
-                        </mat-card-title-group>
+                            <mat-progress-bar [mode]="'determinate'" [value]="item.value"></mat-progress-bar>
+                            <div fxFlex="7" class="text-right"> {{item.value}}/{{ item.capacity }} </div>
+                        </div>
                         <mat-divider></mat-divider>
-                        <mat-card-content>
-                            <div echarts [options]="lineChartOption" (chartInit)="chartInstances.push($event)" class="line-chart"></div>
-                        </mat-card-content>
-                    </mat-card>
-                    <!-- การ์ด 3 -->
-                    <mat-card class="card-type-eighth">
-                        <mat-card-title-group>
-                            <mat-card-title>
-                                <img src="http://www.satit.nu.ac.th/NUDPreptestSystem/assets/dashboard-icon/team-leader2.png" style="position: relative; top: 6px;">                                ยอดนักเรียนภายนอกและภายใน</mat-card-title>
-                        </mat-card-title-group>
-                        <mat-divider></mat-divider>
-                        <mat-card-content>
-                            <div echarts [options]="nestedOption" (chartInit)="chartInstances.push($event)" class="chart"></div>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-            </div>
-        </article>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="text-center primary-color-dark" style="font-size: 40px; padding-top: 35px;">
+                        ยอดรวมความจุที่นั่งสอบ {{ capacityTotal }} ที่นั่ง
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
+    
 </section>

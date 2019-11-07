@@ -42,10 +42,17 @@ export class LoginPageComponent implements OnInit {
         window.localStorage.setItem('email', user['user'][0]['email']);
         window.localStorage.setItem('phone', user['user'][0]['phone']);
         window.localStorage.setItem('school_id', user['user'][0]['school_id']);
+        
         this.school.schoolInfo(user['user'][0]['school_id']).then(resSchool => {
           console.log(resSchool);
           window.localStorage.setItem('school_name', resSchool['school'][0]['name']);
-          this.router.navigateByUrl('/Home');
+          window.localStorage.setItem('school_code', resSchool['school'][0]['code']);
+          if(user['user'][0]['role'] == 'school'){
+            this.router.navigateByUrl('/Home');
+          }else if(user['user'][0]['role'] == 'Administrator') {
+            this.router.navigateByUrl('/ProjectManagement');
+          }
+          
         });
         
       }else{

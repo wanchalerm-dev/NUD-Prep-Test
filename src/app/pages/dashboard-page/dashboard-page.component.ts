@@ -24,6 +24,12 @@ export class DashboardPageComponent implements OnInit {
   nestedOption: any;
   customizedOption: any;
   lineChartOption: any;
+  ratingItems = [];
+  number4 = 0;
+  number5 = 0;
+  number6 = 0;
+  capacityTotal = 0;
+  studentTotal;
 
 
   @HostBinding('@routerAnimation') routerAnimation = true;
@@ -36,30 +42,46 @@ export class DashboardPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.schoolServicce.getNumberStudentGroupByLevel(window.localStorage.getItem('school_id')).then((res = []) => {
+      let schools = res['school'];
+      schools.forEach(school => {
+        // console.log(school);
+        if(school['level'] == 'ป.4'){
+          this.number4 = school['COUNT(level)'];
+        }
+
+        if(school['level'] == 'ป.5'){
+          this.number5 = school['COUNT(level)'];
+        }
+
+        if(school['level'] == 'ป.6'){
+          this.number6 = school['COUNT(level)'];
+        }
+      });
+      this.setPieChart();
+    });
+
+    this.schoolServicce.getMyRoomTestList(window.localStorage.getItem('school_id')).then(resRoom => {
+      console.log(resRoom);
+      let roomTest = resRoom['roomTest'];
+      this.ratingItems = [];
+      roomTest.forEach((room, i) => {
+        let temp = {
+          name: room['building_name'],
+          tag: room['room_name'],
+          value: 0,
+          capacity: room['room_capacity'],
+        };
+        this.capacityTotal += Number(room['room_capacity']);
+        this.ratingItems.push(temp);
+      });
+    })
 
   }
   // Rating list items
-  ratingItems = [
-    {
-      avatar: '/assets/avatars-img/4040.png',
-      name: 'Marian Cannon',
-      tag: '@mariancannon',
-      value: 81.48
-    },
-    {
-      avatar: '/assets/avatars-img/4040.png',
-      name: 'John Lynch',
-      tag: '@johnlynch',
-      value: 68
-    },
-    {
-      avatar: '/assets/avatars-img/4040.png',
-      name: 'Isabella Watts',
-      tag: '@isabellawatts',
-      value: 36
-    }
-  ];
+  
   setPieChart() {
+    this.studentTotal = this.number4 + this.number5 + this.number6 + 0;
     this.schoolServicce.getCountSchool(window.localStorage.getItem("school_id")).then(res => {
       // Model for simple line chart
       this.lineChartOption = {
@@ -70,7 +92,7 @@ export class DashboardPageComponent implements OnInit {
               type: 'png',
               name: 'กราฟจำนวนนักเรียนแต่ละระดับชั้น',
               show: true,
-              title: 'Save As Image',
+              title: 'Download',
               pixelRatio: 3
             }
           }
@@ -127,7 +149,7 @@ export class DashboardPageComponent implements OnInit {
             name: 'ป.4',
             type: 'bar',
             data: [
-              { value: 100, name: 'ป.4', color: MAT_LIGHT_BLUE._300 }
+              { value: this.number4, name: 'ป.4', color: MAT_LIGHT_BLUE._300 }
             ],
             itemStyle: {
               normal: {
@@ -144,7 +166,7 @@ export class DashboardPageComponent implements OnInit {
             name: 'ป.5',
             type: 'bar',
             data: [
-              { value: 245, name: 'ป.5', color: MAT_LIGHT_BLUE._300 }
+              { value: this.number5, name: 'ป.5', color: MAT_LIGHT_BLUE._300 }
             ],
             itemStyle: {
               normal: {
@@ -162,7 +184,7 @@ export class DashboardPageComponent implements OnInit {
             name: 'ป.6',
             type: 'bar',
             data: [
-              { value: 335, name: '1', color: MAT_LIGHT_BLUE._300 }
+              { value: this.number6, name: '1', color: MAT_LIGHT_BLUE._300 }
             ],
             itemStyle: {
               normal: {

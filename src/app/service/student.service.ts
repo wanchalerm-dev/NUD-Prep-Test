@@ -42,7 +42,7 @@ export class StudentService {
   private _host;
 
   constructor(private _http: Http) {
-    this._host = 'http://www.satit.nu.ac.th/node/nudPrepTest';
+    this._host = 'https://www.satit.nu.ac.th/node/nudPrepTest';
   }
 
   private packParameter(param) {

@@ -11,7 +11,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./student-create.component.scss']
 })
 export class StudentCreateComponent implements OnInit {
-
   stateCtrl: FormControl;
   filteredStates: any;
   schoolGroupList = [];
@@ -107,8 +106,8 @@ export class StudentCreateComponent implements OnInit {
   editStudent(){
     this.student.school_name = this.student.school_name.replace('"', '\"');
     this.studentService.editStudent(this.student).then(res => {
-      console.log(res);
-      // this._router.navigateByUrl('/Students');
+      // console.log(res);
+      this._router.navigateByUrl('/Students');
     });
   }
 

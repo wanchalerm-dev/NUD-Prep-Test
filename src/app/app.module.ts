@@ -84,6 +84,17 @@ import { DialogConfirmRemoveStudentComponent } from './pages/student/student-hom
 import { BuildingHomeComponent } from './pages/building/building-home/building-home.component';
 import { BuildingCreateComponent } from './pages/building/building-create/building-create.component';
 import { DialogConfirmRemoveComponent } from './pages/building/building-home/dialog-confirm-remove.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { HomeCommitteeComponent } from './pages/committee/home-committee/home-committee.component';
+import { NewCommitteeComponent } from './pages/committee/new-committee/new-committee.component';
+import { AdminRoleGuard } from './guard/admin-role.guard';
+import { GeneralUserRoleGuard } from './guard/general-user-role.guard';
+import { ProjectHomeComponent } from './pages/project-home/project-home.component';
+import { SchoolListComponent } from './pages/school-list/school-list.component';
+import { PaymentListComponent } from './pages/payment-list/payment-list.component';
+import { GenerateTesterCodeComponent } from './pages/generate-tester-code/generate-tester-code.component';
+import { TestingResultListComponent } from './pages/testing-result-list/testing-result-list.component';
+import { TesterCardComponent } from './pages/tester-card/tester-card.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +112,15 @@ import { DialogConfirmRemoveComponent } from './pages/building/building-home/dia
     BuildingHomeComponent,
     BuildingCreateComponent,
     DialogConfirmRemoveComponent,
+    PaymentComponent,
+    HomeCommitteeComponent,
+    NewCommitteeComponent,
+    ProjectHomeComponent,
+    SchoolListComponent,
+    PaymentListComponent,
+    GenerateTesterCodeComponent,
+    TestingResultListComponent,
+    TesterCardComponent,
   ],
   entryComponents: [
     DialogConfirmRemoveStudentComponent,
