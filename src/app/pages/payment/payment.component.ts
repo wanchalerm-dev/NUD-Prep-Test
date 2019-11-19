@@ -43,6 +43,7 @@ export class PaymentComponent implements OnInit {
 
   save(){
     this.schoolService.newPayment(window.localStorage.getItem('school_id'), this.path, this.amount, this.date).then(res => {
+      console.log(res);
       this.date = '';
       this.path = 'https://www.satit.nu.ac.th/2016/files/15387120050.png';
       this.amount = '';
