@@ -39,11 +39,13 @@
                   <td class="head-table">เลขที่</td>
                   <td class="head-table">โรงเรียน</td>
                   <td class="head-table">หมายเลขโทรศัพท์</td>
+                  <td class="head-table">Username</td>
+                  <td class="head-table">Password</td>
                   <td class="head-table">แก้ไข</td>
                   <td class="head-table">ลบ</td>
                 </tr>
               </thead>
-              <tr *ngFor="let student of studentList; let i = index;">
+              <tr *ngFor="let student of studentList; let i = index;" class="student-item">
                 <td class="text-center">{{ (i + 1) }}</td>
                 <td class="text-center">{{ student.personal_id }}</td>
                 <td style="border-right: none; padding-left: 6px;">{{ student.prename }}{{ student.firstname }}</td>
@@ -53,6 +55,8 @@
                 <td class="text-center">{{ student.number }}</td>
                 <td style="padding-left: 6px;">{{ student.school_name }}</td>
                 <td style="padding-left: 6px;">{{ student.phone }}</td>
+                <td style="padding-left: 6px; text-align: center;">{{ student.tester_code }}</td>
+                <td style="padding-left: 6px; text-align: center;">{{ student.password }}</td>
                 <td class="text-center">
                   <button (click)="editStudent(student.id)" mat-icon-button >
                     <mat-icon >edit</mat-icon>

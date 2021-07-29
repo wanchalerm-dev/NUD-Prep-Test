@@ -29,10 +29,8 @@ export class PaymentComponent implements OnInit {
     this.schoolService.schoolInfo(window.localStorage.getItem('school_id')).then(sch => {
       console.log(sch);
     });
-
     this.showImage();
   }
-
   onSuccessItem(item: FileItem, response: string, status: number, headers: ParsedResponseHeaders): any {
     console.log(response);
     let data = JSON.parse(response);
@@ -40,8 +38,7 @@ export class PaymentComponent implements OnInit {
     console.log(fileResponse);
     this.path = 'https://www.satit.nu.ac.th/2016/nodeUploadFiles/uploads/' + fileResponse['filename'];
   }
-
-  save(){
+  save() {
     this.schoolService.newPayment(window.localStorage.getItem('school_id'), this.path, this.amount, this.date).then(res => {
       console.log(res);
       this.date = '';
@@ -51,14 +48,10 @@ export class PaymentComponent implements OnInit {
       this.showImage();
     });
   }
-
-  showImage(){
+  showImage() {
     this.schoolService.getPaymentInfoBySchool(window.localStorage.getItem('school_id')).then(payment => {
       console.log(payment);
       this.paymentList = payment['payment'];
     });
   }
-
-  
-
 }
